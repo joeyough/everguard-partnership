@@ -51,7 +51,7 @@
     const svg=section.querySelector('svg'),ns='http://www.w3.org/2000/svg';
     const create=(name,attrs,parent)=>{const el=document.createElementNS(ns,name);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v);parent.append(el);return el;};
     let data;
-    try{const result=await fetch('/assets/oahu-coastline.geojson');if(!result.ok)throw new Error('coastline');data=await result.json();if(!data.features?.[0]?.geometry?.coordinates?.length)throw new Error('geometry');}
+    try{const result=await fetch('/website/assets/oahu-coastline.geojson');if(!result.ok)throw new Error('coastline');data=await result.json();if(!data.features?.[0]?.geometry?.coordinates?.length)throw new Error('geometry');}
     catch{svg.hidden=true;section.querySelector('.map-unavailable').hidden=false;section.querySelector('.map-motion').disabled=true;return;}
     const rings=data.features[0].geometry.coordinates,points=rings.flat();
     const xs=points.map(p=>p[0]*Math.cos(21.5*Math.PI/180)),ys=points.map(p=>-p[1]);

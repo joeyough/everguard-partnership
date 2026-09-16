@@ -25,27 +25,36 @@ function page(error: boolean): Response {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>EverGuard</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
- :root{--org:#ff6a00;--ink:#ececec;--mut:rgba(236,236,236,.55);--div:rgba(236,236,236,.16)}
+ /* Same language as the website and the landing page: flat #090a0b, Barlow
+    Condensed set large, DM Sans for the small type, one orange. This screen is
+    the first thing she sees, so it should not look like a different product.
+    No logo image on purpose: this page is served before the cookie exists, so
+    an image request would hit this same gate and come back as HTML. */
+ :root{--org:#ff650a;--ink:#090a0b;--white:#f2f2ed;--mut:#a4a5a7;--edge:#ffffff26}
  *{box-sizing:border-box}
- body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
-   background:radial-gradient(1200px 800px at 70% 6%,#232323 0%,#191919 60%);color:var(--ink);
-   font-family:Montserrat,system-ui,-apple-system,sans-serif}
- .box{width:100%;max-width:380px}
- .mark{font-family:Orbitron,sans-serif;font-weight:800;letter-spacing:.06em;font-size:22px;margin-bottom:6px}
- .mark b{color:var(--org)}
- .sub{color:var(--mut);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:30px}
- label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
- input{width:100%;padding:13px 14px;background:#202020;border:1px solid var(--div);border-radius:3px;
-   color:var(--ink);font-size:16px;font-family:inherit}
- input:focus{outline:none;border-color:var(--org)}
- button{width:100%;margin-top:14px;padding:14px;min-height:48px;background:var(--org);border:0;
-   border-radius:3px;color:#141414;font-family:Montserrat,system-ui,sans-serif;font-weight:700;
-   font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
- button:hover{background:#ff8a33}
+ body{margin:0;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:26px;
+   background:var(--ink);color:var(--white);font-family:'DM Sans',Arial,sans-serif}
+ ::selection{background:var(--org);color:#080808}
+ .box{width:100%;max-width:392px}
+ .mark{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;
+   letter-spacing:.07em;font-size:30px;text-transform:uppercase;line-height:1}
+ .mark b{color:var(--org);font-weight:700}
+ .sub{color:var(--mut);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+   font-weight:600;margin:10px 0 34px}
+ label{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+   color:var(--mut);font-weight:600;margin-bottom:9px}
+ input{width:100%;padding:14px 15px;background:#ffffff08;border:1px solid var(--edge);border-radius:3px;
+   color:var(--white);font-size:16px;font-family:inherit}
+ input:focus{outline:none;border-color:var(--org);background:#ffffff0d}
+ button{width:100%;margin-top:14px;padding:15px;min-height:48px;background:var(--org);border:0;
+   border-radius:3px;color:#080808;font-family:'DM Sans',Arial,sans-serif;font-weight:700;
+   font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+ button:hover{background:#ff7a2e}
  .err{margin-top:14px;color:var(--org);font-size:13px}
- .foot{margin-top:26px;color:var(--mut);font-size:11.5px;line-height:1.6}
+ .foot{margin-top:28px;color:var(--mut);font-size:12px;line-height:1.65;
+   border-top:1px solid #ffffff13;padding-top:18px}
 </style></head><body>
 <form class="box" method="POST">
   <div class="mark">EVER<b>GUARD</b></div>

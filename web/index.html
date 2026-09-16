@@ -5,120 +5,108 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>EverGuard | Prepared for Chris Calderon</title>
+<link rel="icon" type="image/webp" href="/website/assets/eg-shield-outline.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* The landing borrows the WEBSITE's language, not the deck's: flat #090a0b,
+   Barlow Condensed set tight and large, DM Sans for anything small, hairline
+   rules, one orange. The proposal used to open in Orbitron on a gradient,
+   which read as a slide deck; the first thing she sees should feel like the
+   product she is being shown. */
 :root{
-  --bg:#141414; --panel:#1c1c1c; --ink:#ececec; --mut:rgba(236,236,236,.62);
-  --mut2:rgba(236,236,236,.84); --org:#ff6a00; --org-deep:#cc4e00;
-  --line:rgba(236,236,236,.10); --div:rgba(236,236,236,.16);
+  --org:#ff650a; --ink:#090a0b; --mut:#a4a5a7; --white:#f2f2ed;
+  --line:#ffffff13; --edge:#ffffff26;
 }
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;background:var(--bg)}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;background:var(--ink)}
+a{color:inherit;text-decoration:none}
+a,button{-webkit-tap-highlight-color:transparent}
+a:focus-visible{outline:2px solid var(--org);outline-offset:4px}
+::selection{background:var(--org);color:#080808}
 
-/* ONE SCREEN, NO SCROLL. She sees everything at once, on a phone included.
-   This is done structurally rather than by tuning heights: the page is a
-   viewport-tall flex column, and the doors region is the only thing that
-   flexes, so it absorbs whatever is left over. 100svh (the SMALLEST viewport,
-   iOS Safari with its bars showing) is the only unit that guarantees no
-   scrollbar; 100vh and 100dvh both let the bars steal space. */
-body{color:var(--ink);font-family:"Montserrat",system-ui,-apple-system,sans-serif;
-  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;
-  background:radial-gradient(1400px 900px at 74% 0%,#1f1f1f 0%,#141414 60%);
+/* ONE SCREEN. Structural, not tuned: a viewport-tall flex column where the
+   doors are the only flexible part, so they absorb the leftover height and the
+   page cannot overflow. 100svh is the smallest viewport, the only unit that
+   guarantees no scrollbar when a phone's browser bars are showing. */
+body{color:var(--white);font-family:'DM Sans',Arial,sans-serif;font-size:15px;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
   height:100svh;overflow:hidden;display:flex;flex-direction:column}
-.wrap{max-width:1000px;margin:0 auto;padding:0 clamp(16px,4vw,28px);
-  flex:1 1 auto;display:flex;flex-direction:column;min-height:0;
-  padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
-h1,h2,.brand{font-family:"Orbitron",sans-serif}
+.wrap{width:100%;max-width:1060px;margin:0 auto;
+  padding:0 clamp(18px,4.5vw,34px) calc(14px + env(safe-area-inset-bottom,0px));
+  flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
+h1,h2,.brand{font-family:'Barlow Condensed','Arial Narrow',sans-serif}
 
 .bar{flex:0 0 auto;display:flex;align-items:center;gap:12px;
-  padding:calc(12px + env(safe-area-inset-top,0px)) 0 11px;border-bottom:1px solid var(--line)}
-.brand{font-weight:800;letter-spacing:.07em;font-size:16px;white-space:nowrap}
-.brand b{color:var(--org)}
+  padding:calc(14px + env(safe-area-inset-top,0px)) 0 12px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-size:18px;
+  letter-spacing:.08em;font-weight:700;text-transform:uppercase}
+.brand img{width:22px;height:22px;display:block}
+.brand b{color:var(--org);font-weight:700}
 .spacer{flex:1 1 auto;min-width:0}
-.private{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);
-  border:1px solid var(--div);border-radius:99px;padding:5px 11px;white-space:nowrap}
+.private{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);
+  font-weight:600;white-space:nowrap}
 
-header{flex:0 0 auto;padding:clamp(18px,4.5vw,44px) 0 clamp(16px,3.5vw,32px)}
-.for{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--org)}
-h1{font-size:clamp(26px,5.4vw,46px);line-height:1.12;margin:10px 0 14px;font-weight:700}
+header{flex:0 0 auto;padding:clamp(20px,4.5vw,42px) 0 clamp(16px,3.2vw,30px)}
+.for{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--org);font-weight:600}
+h1{font-size:clamp(34px,7.4vw,66px);line-height:.92;margin:12px 0 0;
+  font-weight:700;letter-spacing:.005em;text-transform:uppercase}
 h1 span{color:var(--org)}
-.problem{color:var(--mut2);max-width:56ch;font-size:clamp(15px,1.9vw,17.5px);line-height:1.55;margin:0}
-.problem b{color:var(--ink);font-weight:600}
 
-/* Three rows that each take an equal share of the leftover height.
-   minmax(0,1fr) and not 1fr: a plain 1fr keeps a min-content floor and would
-   still push the page over. */
 .doors{flex:1 1 auto;min-height:0;display:grid;gap:10px;
   grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));margin:0}
-.door{display:flex;flex-direction:column;gap:7px;min-height:0;overflow:hidden;
-  background:var(--panel);border:1px solid var(--div);border-radius:4px;
-  padding:16px 18px 14px;text-decoration:none;color:inherit;
-  transition:border-color .18s ease,transform .18s ease}
-a.door:hover,a.door:focus-visible{border-color:var(--org);transform:translateY(-2px);outline:none}
-a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
-.num{font-size:11px;letter-spacing:.2em;color:var(--org);font-weight:700}
-.door h2{font-size:17px;margin:0;letter-spacing:.02em;font-weight:700;line-height:1.2}
-.door p{margin:0;color:var(--mut);font-size:13.5px;line-height:1.45}
-.tag{margin-top:auto;padding-top:10px;font-size:10.5px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--org)}
 
-/* Phones drop the door descriptions rather than shrinking the headings.
-   Measured: at 390x660 the header and footer leave about 109px per door, and a
-   door carrying a two-line description needs about 149px. Something had to go,
-   and losing a sentence beats clipping it mid-word or setting Orbitron too
-   small to read. The title and the tag already say what each door is.
-   Keyed to HEIGHT, not width, because height is what runs out: 700px covers
-   iPhone SE (553), common Android (640) and iPhone 14/15 (660), while tablets
-   and tall phones in portrait keep the full copy. */
+/* Hairline cards on the flat ground, the way the website treats its nav rows,
+   rather than the filled panels the deck uses. */
+.door{position:relative;overflow:hidden;min-height:0;
+  display:flex;flex-direction:column;gap:6px;
+  border:1px solid var(--edge);border-radius:3px;padding:16px 18px 14px;
+  background:linear-gradient(180deg,#ffffff06,#ffffff00);
+  transition:border-color .2s ease,background .2s ease}
+a.door:hover,a.door:focus-visible{border-color:var(--org);background:#ff650a0a;outline:none}
+.num{font-size:11.5px;letter-spacing:.14em;color:var(--org);font-weight:700}
+.door h2{font-size:23px;line-height:1;margin:0;font-weight:700;
+  letter-spacing:.02em;text-transform:uppercase}
+.door p{margin:0;color:var(--mut);font-size:13.5px;line-height:1.45}
+.go{margin-top:auto;padding-top:10px;display:flex;align-items:center;gap:8px;
+  font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--org);font-weight:600}
+.go svg{width:17px;height:17px;flex:0 0 auto}
+a.door:hover .go svg{transform:translateX(3px)}
+.go svg{transition:transform .2s ease}
+
+/* Phones drop the descriptions rather than shrinking the headings: a two-line
+   description needs about 40px that a short screen does not have, and the
+   title plus the label already say what each door is. Keyed to HEIGHT, which
+   is what actually runs out. */
 @media (max-height:700px){
   .door p{display:none}
-  .door{padding:14px 16px 12px;gap:6px}
-  .tag{padding-top:6px}
-  header{padding:16px 0 14px}
+  .door{padding:14px 16px 12px}
+  .go{padding-top:6px}
+  header{padding:18px 0 14px}
 }
-
-/* Shorter still: the door becomes one row. Number, title, then the tag on the
-   right. It reads as a compact list, which is the right shape for a phone
-   anyway, and the whole row stays tappable.
-   The 650px line is measured, not guessed: a stacked door needs about 101px,
-   and a 640px-tall Android leaves only 102px before the footer, which clipped.
-   Below this, rows; above it, the stack has room. */
-@media (max-height:650px){
+/* Shorter still: one row per door. Reads as a compact list, which is the right
+   shape for a phone, and the whole row stays tappable. */
+@media (max-height:640px){
   .door{flex-direction:row;align-items:center;gap:12px;padding:12px 16px}
-  .door h2{flex:1 1 auto;font-size:16px}
+  .door h2{flex:1 1 auto;font-size:19px}
   .num{flex:0 0 auto}
-  .tag{margin-top:0;padding-top:0;white-space:nowrap}
+  .go{margin-top:0;padding-top:0;white-space:nowrap}
 }
 
-/* Desktop: the same three doors as one row, header and doors centered in the
-   room, footer on the floor. No separate layout, just different flex roles. */
-@media (min-width:720px){
+@media (min-width:760px){
   .wrap{justify-content:center}
-  .doors{flex:0 1 auto;max-height:300px;
+  .doors{flex:0 1 auto;max-height:290px;
     grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr)}
-  .door{min-height:190px;padding:22px 20px 18px}
+  .door{min-height:180px;padding:22px 22px 18px}
+  .door h2{font-size:27px}
   .foot{margin-top:auto}
 }
 
 .foot{flex:0 0 auto;border-top:1px solid var(--line);margin-top:14px;padding-top:12px;
-  display:flex;flex-wrap:wrap;gap:6px 20px;align-items:center;justify-content:space-between}
-.foot .line{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
-#next{color:var(--mut2)}
-
-/* READABILITY PASS. Her deck sets Orbitron at 16px and up and never smaller;
-   it is a display face, and at 8 to 11px with wide tracking it stops being
-   legible and starts being work to read. Orbitron keeps the wordmark and the
-   real headings. Every small label and tag is Montserrat, a little larger and
-   less tracked. Anything new and small belongs in this list. */
-.num,.tag,.private,.foot .line,#next{
-  font-family:"Montserrat",system-ui,-apple-system,sans-serif}
-.num{font-size:11.5px;letter-spacing:.1em;font-weight:700}
-.tag{font-size:11.5px;letter-spacing:.09em;font-weight:700}
-.private{font-size:10.5px;letter-spacing:.1em;font-weight:600}
-.foot .line{font-size:11.5px;letter-spacing:.06em;font-weight:500}
-.for{font-size:11.5px;letter-spacing:.14em;font-weight:700}
+  display:flex;flex-wrap:wrap;gap:4px 20px;align-items:center;justify-content:space-between}
+.foot span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:500}
+#next{color:var(--white)}
 @media (prefers-reduced-motion:reduce){*{transition:none !important}}
 </style>
 </head>
@@ -126,47 +114,49 @@ a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
 <div class="wrap">
 
   <div class="bar">
-    <div class="brand">EVER<b>GUARD</b></div>
+    <div class="brand"><img src="/website/assets/eg-shield-outline.webp" alt="">EVER<b>GUARD</b></div>
     <div class="spacer"></div>
-    <div class="private">Private &middot; not for distribution</div>
+    <div class="private">Private</div>
   </div>
 
   <header>
     <div class="for">Prepared for Chris Calderon</div>
     <h1>Stronger solutions, <span>safer tomorrows.</span></h1>
-    <p class="problem">You did not get short on skill. <b>You got bigger than the
-    setup.</b></p>
   </header>
 
   <div class="doors">
-    <!-- The website opens in a new tab on purpose: it is a separate host with
-         no link back here, so same-tab would strand her on the back button. -->
-    <a class="door" href="https://everguard-website.netlify.app" target="_blank" rel="noopener">
+    <a class="door" href="/website/">
       <div class="num">01</div>
       <h2>The website</h2>
       <p>What your customers would see. Built and working, on a phone.</p>
-      <div class="tag">Open the website</div>
+      <div class="go">Open the website
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+      </div>
     </a>
 
     <a class="door" href="./deck/">
       <div class="num">02</div>
       <h2>The plan</h2>
       <p>Who builds it, who runs the business, and why it is one team.</p>
-      <div class="tag">Open the plan</div>
+      <div class="go">Open the plan
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+      </div>
     </a>
 
     <a class="door" href="./agreement/">
       <div class="num">03</div>
       <h2>The agreement</h2>
       <p>Scope, responsibility, terms. A copy for your attorney.</p>
-      <div class="tag">Read the terms</div>
+      <div class="go">Read the terms
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+      </div>
     </a>
   </div>
 
   <div class="foot">
-    <span class="line">Keenan Miller Technology Solutions &middot; Joe CXO</span>
-    <!-- id="next" stays here: the agreement links to ../#next in two places. -->
-    <span class="line" id="next">Questions, or a walkthrough? Reply to Keenan</span>
+    <span>Keenan Miller Technology Solutions &middot; Joe CXO</span>
+    <!-- id="next" stays: the agreement links to ../#next in two places. -->
+    <span id="next">Questions? Reply to Keenan</span>
   </div>
 
 </div>

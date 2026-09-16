@@ -27,7 +27,7 @@ than the headings shrinking.
 
 | | Door | Where |
 |---|---|---|
-| 01 | **The website** | `https://everguard-website.netlify.app` What her customers would see. Separate site, new tab. |
+| 01 | **The website** | `/website/` What her customers would see. Same site, same tab, with a link back. |
 | 02 | **The plan** | `/deck/` The partnership deck. Called "the plan" everywhere she reads, because operators do not say deck. |
 | 03 | **The agreement** | `/agreement/` Terms, plus a plain PDF for an attorney. |
 
@@ -43,33 +43,42 @@ the proposal's product claim now rests entirely on the plan's slides.
 
 ## The website
 
-`demo-site/` is a second, separate Netlify project:
-**https://everguard-website.netlify.app**, behind the same access code.
+`web/website/` is the Everguard website concept, **mounted inside this site**
+at `/website/`, so there is one access code and one login.
 
-It is separate rather than a folder on this site because the export is written
-for a domain root. `app.js` picks a service from path segment `[1]`, and about
-twenty asset paths plus the coastline `fetch` are all `/`-prefixed, so from a
-subfolder every service page would quietly render the home page instead. At a
-root it needs no changes.
+It was briefly its own Netlify project. That meant Chris typed the code twice,
+because `netlify.app` is on the public suffix list and a cookie cannot span two
+subdomains. Mounting it fixed that and also gave it a plain way home.
 
-- `demo-site/site/` is what deploys. Do not hand-edit it.
-- `demo-site/optimize.py` rebuilds it from the pristine export on the Desktop.
-  Re-run it when the designer sends a new one. It re-encodes the photographs,
-  drops two orphan images, resizes the shields, rewrites the filename
-  references and appends the phone fixes. **Assets went 16.1MB to 663KB**; the
-  export shipped photographs as lossless PNG, which is roughly 13MB on a home
-  page someone opens on a phone.
-- `demo-site/ORIGINAL-ASSETS.md` records the original sizes and md5s, so the
-  change is auditable without the Desktop copy.
-- The two `gate.ts` files are copies on purpose: pointing one site at the
-  other's edge function is undocumented and would ship an ungated site if it
-  silently failed. Keep them in step. They should differ only in the two lines
-  of gate copy, which the demo uses to explain that the code is the same one.
-  `diff netlify/edge-functions/gate.ts demo-site/netlify/edge-functions/gate.ts`
+Mounting takes a deliberate rewrite, because the export is written for a domain
+root. `website-build/optimize.py` does all of it and refuses to finish if
+anything is left pointing at the wrong place:
 
-She enters the code twice, once per host. That is unavoidable: `netlify.app`
-is on the public suffix list, so the cookie cannot span two subdomains, and
-putting the code in a link would mean committing it to a public repo.
+- every absolute path gains the `/website` prefix
+- `app.js` picks its service from path segment `[1]`, which under a prefix has
+  to become `[2]`. Miss this and every service page silently renders the home
+  page, then throws in `capabilities.js` because `.service-hero` is absent.
+- the `route.includes('/dispatch-center/')` style checks are left alone: they
+  are substring tests, and they still match under the prefix
+- a **Back to the proposal** link is injected into the header and the footer,
+  after the rewrite, so its `href="/"` still means the landing page
+- **assets go 16.1MB to 663KB.** The export ships photographs as lossless PNG,
+  about 13MB on a page someone opens on a phone. Two images are referenced
+  nowhere and get dropped. The shields stay at 640px because
+  `eg-shield-outline` is also the SUV door decal at ~187 CSS px, so 256 mushes
+  it. Photos stay at native 1536 because `.service-photo` is 53% of the
+  viewport. `eg-patrol` gets q90 because the lamp overlays run it through
+  `brightness(1.65)`, which is where artifacts show.
+- sub-20px tap targets and 9px body type in the export are raised
+
+Re-run it after any new export: `cd website-build && python3 optimize.py`. Do
+not hand-edit `web/website/`; it is generated. The pristine export stays at
+`~/Desktop/everguard-website/` and is never modified. `ORIGINAL-ASSETS.md`
+records the originals' md5s.
+
+Do not reorder or module-ise the website's scripts: `capabilities.js` calls
+`arrow()` declared in `app.js`, both are classic `defer`, and app.js must stay
+first.
 
 ## Layout
 
@@ -87,8 +96,19 @@ putting the code in a link would mean committing it to a public repo.
 ## House rules
 
 - **Brand is EVERGUARD.** Never any other name for it.
-- Orange `#FF6A00` and `#CC4E00`. Black `#1A1A1A`, charcoal `#2E2E2E`, bone
-  `#E6E6E6`. Headers Orbitron Bold, body Montserrat Regular.
+- **Two type systems, on purpose, and this is worth knowing before you edit.**
+  The deck and the agreement use the original rail: Orbitron headers,
+  Montserrat body, orange `#FF6A00`, black `#1A1A1A`. The **website, the
+  landing page and the login screen** use the website's own language instead:
+  Barlow Condensed headings set large and tight, DM Sans for anything small,
+  flat `#090a0b`, orange `#ff650a`. Joey asked for that on 2026-09-16, because
+  the landing and the login were reading as a slide deck when the first thing
+  she sees should feel like the product. So the landing deliberately departs
+  from the recorded Orbitron rail. If the two ever need to converge, that is a
+  decision for Joey, not a tidy-up.
+- Whichever system you are in, **no display face at small sizes.** Orbitron
+  never below 16px, and small text is Montserrat or DM Sans. This came from a
+  real eye-strain complaint, not a preference.
 - Thin orange line icons. One real camera or operations photo per slide,
   maximum. No sunset heroes, no stock person with a coffee cup.
 - Nothing is published, linked, or sent to the client without Joey's yes on the
@@ -101,34 +121,27 @@ putting the code in a link would mean committing it to a public repo.
 No build step. Open `web/index.html` in a browser, or serve the folder:
 
 ```
-cd web && python3 -m http.server 8899
-cd demo-site/site && python3 -m http.server 8931   # the website needs a server
+cd web && python3 -m http.server 8899   # landing at /, website at /website/
 ```
 
 The website must be served, not opened as a file: its links are root-relative
 and it fetches the coastline data.
 
-## Deploying: two projects, two commands
+## Deploying
 
-This repo now ships **two** Netlify projects, and the CLI reads `netlify.toml`
-from the directory you are in, not from the repo root. Always pass `--site`, so
-a deploy cannot wander into the wrong project or offer to create a new one.
+One project. The CLI reads `netlify.toml` from the directory you are in, and
+this repo is not linked on every machine, so pass `--site` explicitly.
 
 ```
-# the proposal
 netlify deploy --prod --site 2bc6ca31-c491-4e24-879d-41fe35f1d734
-
-# the website (from demo-site/)
-cd demo-site && netlify deploy --prod --site 7e6717a8-cf40-46c3-8608-01521b03c055
 ```
 
-Then prove the gate on both, on an asset as well as on a page, because a
-missing environment variable used to fail open:
+Then prove the gate, on an asset as well as a page, because a missing
+environment variable used to fail open:
 
 ```
-curl -sI https://everguard-proposal.netlify.app/ | head -1              # 401
-curl -sI https://everguard-website.netlify.app/ | head -1               # 401
-curl -sI https://everguard-website.netlify.app/assets/eg-patrol.webp | head -1   # 401
+curl -sI https://everguard-proposal.netlify.app/ | head -1                        # 401
+curl -sI https://everguard-proposal.netlify.app/website/assets/eg-patrol.webp | head -1   # 401
 ```
 
 `gate.ts` now fails **closed**: with no `DECK_PASSWORD` set it returns 503

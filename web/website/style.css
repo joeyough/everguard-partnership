@@ -101,7 +101,12 @@ a:hover .arrow-icon{background:#090a0b;color:var(--orange);transform:translateX(
  .service-next a{line-height:1.1;gap:15px}.service-next .arrow-icon{width:32px;height:32px;flex-basis:32px}
 }
 
-/* ---- phone fixes, added by optimize.py (see script comments) ---- */
+/* ---- added by optimize.py, see the script comments ---- */
+.to-proposal{display:inline-flex;align-items:center;min-height:44px;font-family:"DM Sans",Arial,sans-serif;font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--muted);white-space:nowrap}
+.to-proposal:hover,.to-proposal:focus-visible{color:var(--orange)}
+.header-right .to-proposal{margin-right:4px}
+.foot-back{margin-right:18px}
+@media(max-width:700px){.header-right .to-proposal{font-size:12px}}
 .ending-nav a{min-height:44px;display:flex;align-items:center}
 .back-top{display:inline-flex;align-items:center;min-height:44px}
 .breadcrumb a{display:inline-flex;align-items:center;min-height:44px}

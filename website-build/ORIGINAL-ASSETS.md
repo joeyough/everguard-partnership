@@ -1,7 +1,7 @@
 # Original export assets
 
-Recorded before optimization so the change is auditable and
-reversible without the Desktop copy. The pristine export itself
+Recorded before optimization so the change is
+auditable and reversible without the Desktop copy. The pristine export
 lives at `/Users/joeymentz/Desktop/everguard-website/site` and is never modified by `optimize.py`.
 
 | file | size | mode | bytes | md5 |
