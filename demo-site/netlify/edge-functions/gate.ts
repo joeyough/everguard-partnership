@@ -49,12 +49,12 @@ function page(error: boolean): Response {
 </style></head><body>
 <form class="box" method="POST">
   <div class="mark">EVER<b>GUARD</b></div>
-  <div class="sub">Private preview</div>
+  <div class="sub">The website concept</div>
   <label for="p">Access code</label>
   <input id="p" name="password" type="password" autocomplete="current-password" autofocus>
   <button type="submit">Enter</button>
   ${error ? '<div class="err">That code did not work. Try again.</div>' : ""}
-  <div class="foot">Private material. If you need the code, ask the person who sent you the link.</div>
+  <div class="foot">Same access code as the proposal. If you need it, ask the person who sent you the link.</div>
 </form></body></html>`,
     { status: error ? 401 : 401, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } }
   );

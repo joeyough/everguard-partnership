@@ -1,0 +1,16 @@
+# The Everguard website concept ships from site/ as its own Netlify project.
+#
+# Why it is a separate project rather than a folder on the proposal site: the
+# export is written for a domain root. app.js reads path segment [1] to pick a
+# service, and roughly twenty asset paths plus the coastline fetch are all
+# "/"-prefixed. Served from a subfolder, every service page would quietly render
+# the home page instead. At a root it needs no changes at all.
+#
+# The same edge gate as the proposal site guards this one, and it reads the
+# password from the DECK_PASSWORD environment variable. Nothing here is indexed:
+# see site/robots.txt and site/_headers.
+[build]
+  publish = "site"
+
+[functions]
+  # edge functions live in netlify/edge-functions and are picked up automatically

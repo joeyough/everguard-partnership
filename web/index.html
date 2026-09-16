@@ -16,78 +16,107 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;background:var(--bg)}
+
+/* ONE SCREEN, NO SCROLL. She sees everything at once, on a phone included.
+   This is done structurally rather than by tuning heights: the page is a
+   viewport-tall flex column, and the doors region is the only thing that
+   flexes, so it absorbs whatever is left over. 100svh (the SMALLEST viewport,
+   iOS Safari with its bars showing) is the only unit that guarantees no
+   scrollbar; 100vh and 100dvh both let the bars steal space. */
 body{color:var(--ink);font-family:"Montserrat",system-ui,-apple-system,sans-serif;
   font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;
   background:radial-gradient(1400px 900px at 74% 0%,#1f1f1f 0%,#141414 60%);
-  padding-bottom:calc(30px + env(safe-area-inset-bottom,0px))}
-.wrap{max-width:1000px;margin:0 auto;padding:0 clamp(16px,4vw,28px)}
-h1,h2,.brand,.num,.tag,.foot a{font-family:"Orbitron",sans-serif}
+  height:100svh;overflow:hidden;display:flex;flex-direction:column}
+.wrap{max-width:1000px;margin:0 auto;padding:0 clamp(16px,4vw,28px);
+  flex:1 1 auto;display:flex;flex-direction:column;min-height:0;
+  padding-bottom:calc(14px + env(safe-area-inset-bottom,0px))}
+h1,h2,.brand{font-family:"Orbitron",sans-serif}
 
-.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;
-  padding:calc(20px + env(safe-area-inset-top,0px)) 0 16px;border-bottom:1px solid var(--line)}
+.bar{flex:0 0 auto;display:flex;align-items:center;gap:12px;
+  padding:calc(12px + env(safe-area-inset-top,0px)) 0 11px;border-bottom:1px solid var(--line)}
 .brand{font-weight:800;letter-spacing:.07em;font-size:16px;white-space:nowrap}
 .brand b{color:var(--org)}
-.firms{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
 .spacer{flex:1 1 auto;min-width:0}
 .private{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);
   border:1px solid var(--div);border-radius:99px;padding:5px 11px;white-space:nowrap}
 
-header{padding:clamp(34px,7vw,58px) 0 clamp(26px,5vw,40px)}
+header{flex:0 0 auto;padding:clamp(18px,4.5vw,44px) 0 clamp(16px,3.5vw,32px)}
 .for{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--org)}
-h1{font-size:clamp(26px,5.4vw,46px);line-height:1.12;margin:12px 0 18px;font-weight:700}
+h1{font-size:clamp(26px,5.4vw,46px);line-height:1.12;margin:10px 0 14px;font-weight:700}
 h1 span{color:var(--org)}
-.problem{color:var(--mut2);max-width:56ch;font-size:clamp(15px,1.9vw,17.5px);line-height:1.62;margin:0}
+.problem{color:var(--mut2);max-width:56ch;font-size:clamp(15px,1.9vw,17.5px);line-height:1.55;margin:0}
 .problem b{color:var(--ink);font-weight:600}
 
-.doors{display:grid;gap:12px;grid-template-columns:1fr;margin:0 0 30px}
-@media (min-width:720px){.doors{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1040px){.doors{grid-template-columns:repeat(4,minmax(0,1fr))}}
-/* Five cards into four columns: the console and the film take the first two
-   slots so they stay adjacent, and Next step runs the full width underneath as
-   a call to action rather than a stranded fifth column. */
-@media (min-width:720px){.door.next{grid-column:1 / -1;min-height:0}}
-.door.next{scroll-margin-top:24px;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
-.door.next p{flex:1 1 260px}
-.door.next .tag{margin-top:0;padding-top:0}
-.door{display:flex;flex-direction:column;gap:9px;min-height:132px;
+/* Three rows that each take an equal share of the leftover height.
+   minmax(0,1fr) and not 1fr: a plain 1fr keeps a min-content floor and would
+   still push the page over. */
+.doors{flex:1 1 auto;min-height:0;display:grid;gap:10px;
+  grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));margin:0}
+.door{display:flex;flex-direction:column;gap:7px;min-height:0;overflow:hidden;
   background:var(--panel);border:1px solid var(--div);border-radius:4px;
-  padding:20px 18px 18px;text-decoration:none;color:inherit;
+  padding:16px 18px 14px;text-decoration:none;color:inherit;
   transition:border-color .18s ease,transform .18s ease}
 a.door:hover,a.door:focus-visible{border-color:var(--org);transform:translateY(-2px);outline:none}
 a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
 .num{font-size:11px;letter-spacing:.2em;color:var(--org);font-weight:700}
-.door h2{font-size:17px;margin:0;letter-spacing:.02em;font-weight:700}
-.door p{margin:0;color:var(--mut);font-size:13.5px;line-height:1.5}
-.tag{margin-top:auto;padding-top:14px;font-size:10.5px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--org);min-height:22px}
-.door.next{background:transparent;border-style:dashed}
-.door.next .tag{color:var(--mut2)}
+.door h2{font-size:17px;margin:0;letter-spacing:.02em;font-weight:700;line-height:1.2}
+.door p{margin:0;color:var(--mut);font-size:13.5px;line-height:1.45}
+.tag{margin-top:auto;padding-top:10px;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--org)}
 
-/* The fleet film is a twin of the numbered doors, not a leftover text link.
-   Same border, same type, same hover. It carries the word SAMPLE where the
-   others carry a number, which is what ranks it without inventing a second
-   visual language on the page. */
-.door.sample{background:transparent}
-.door.sample .num{color:var(--mut);letter-spacing:.18em;text-transform:uppercase}
-.door.sample h2{color:var(--mut2)}
-.door.sample .tag{color:var(--mut2)}
-a.door.sample:hover .tag,a.door.sample:focus-visible .tag{color:var(--org)}
-.sample-note{color:var(--mut);letter-spacing:.12em}
-.foot{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;
-  gap:10px 20px;align-items:center;justify-content:space-between}
+/* Phones drop the door descriptions rather than shrinking the headings.
+   Measured: at 390x660 the header and footer leave about 109px per door, and a
+   door carrying a two-line description needs about 149px. Something had to go,
+   and losing a sentence beats clipping it mid-word or setting Orbitron too
+   small to read. The title and the tag already say what each door is.
+   Keyed to HEIGHT, not width, because height is what runs out: 700px covers
+   iPhone SE (553), common Android (640) and iPhone 14/15 (660), while tablets
+   and tall phones in portrait keep the full copy. */
+@media (max-height:700px){
+  .door p{display:none}
+  .door{padding:14px 16px 12px;gap:6px}
+  .tag{padding-top:6px}
+  header{padding:16px 0 14px}
+}
+
+/* Shorter still: the door becomes one row. Number, title, then the tag on the
+   right. It reads as a compact list, which is the right shape for a phone
+   anyway, and the whole row stays tappable.
+   The 650px line is measured, not guessed: a stacked door needs about 101px,
+   and a 640px-tall Android leaves only 102px before the footer, which clipped.
+   Below this, rows; above it, the stack has room. */
+@media (max-height:650px){
+  .door{flex-direction:row;align-items:center;gap:12px;padding:12px 16px}
+  .door h2{flex:1 1 auto;font-size:16px}
+  .num{flex:0 0 auto}
+  .tag{margin-top:0;padding-top:0;white-space:nowrap}
+}
+
+/* Desktop: the same three doors as one row, header and doors centered in the
+   room, footer on the floor. No separate layout, just different flex roles. */
+@media (min-width:720px){
+  .wrap{justify-content:center}
+  .doors{flex:0 1 auto;max-height:300px;
+    grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr)}
+  .door{min-height:190px;padding:22px 20px 18px}
+  .foot{margin-top:auto}
+}
+
+.foot{flex:0 0 auto;border-top:1px solid var(--line);margin-top:14px;padding-top:12px;
+  display:flex;flex-wrap:wrap;gap:6px 20px;align-items:center;justify-content:space-between}
 .foot .line{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+#next{color:var(--mut2)}
 
 /* READABILITY PASS. Her deck sets Orbitron at 16px and up and never smaller;
    it is a display face, and at 8 to 11px with wide tracking it stops being
    legible and starts being work to read. Orbitron keeps the wordmark and the
-   real headings. Every small label, tag, timestamp and button is Montserrat,
-   a little larger and less tracked. */
-.num,.tag,.private,.firms,.foot .line{
+   real headings. Every small label and tag is Montserrat, a little larger and
+   less tracked. Anything new and small belongs in this list. */
+.num,.tag,.private,.foot .line,#next{
   font-family:"Montserrat",system-ui,-apple-system,sans-serif}
 .num{font-size:11.5px;letter-spacing:.1em;font-weight:700}
 .tag{font-size:11.5px;letter-spacing:.09em;font-weight:700}
 .private{font-size:10.5px;letter-spacing:.1em;font-weight:600}
-.firms{font-size:11px;letter-spacing:.09em;font-weight:500}
 .foot .line{font-size:11.5px;letter-spacing:.06em;font-weight:500}
 .for{font-size:11.5px;letter-spacing:.14em;font-weight:700}
 @media (prefers-reduced-motion:reduce){*{transition:none !important}}
@@ -98,7 +127,6 @@ a.door.sample:hover .tag,a.door.sample:focus-visible .tag{color:var(--org)}
 
   <div class="bar">
     <div class="brand">EVER<b>GUARD</b></div>
-    <div class="firms">Keenan Miller Technology Solutions &nbsp;|&nbsp; Joe CXO<br><span class="sample-note">This site is the sample.</span></div>
     <div class="spacer"></div>
     <div class="private">Private &middot; not for distribution</div>
   </div>
@@ -107,53 +135,38 @@ a.door.sample:hover .tag,a.door.sample:focus-visible .tag{color:var(--org)}
     <div class="for">Prepared for Chris Calderon</div>
     <h1>Stronger solutions, <span>safer tomorrows.</span></h1>
     <p class="problem">You did not get short on skill. <b>You got bigger than the
-    setup.</b> New clients, new sites, off the parent company, and the jobs still
-    run through you. Start with the console. It is the thing you are actually
-    selling.</p>
+    setup.</b></p>
   </header>
 
   <div class="doors">
-    <a class="door" href="./demo/">
+    <!-- The website opens in a new tab on purpose: it is a separate host with
+         no link back here, so same-tab would strand her on the back button. -->
+    <a class="door" href="https://everguard-website.netlify.app" target="_blank" rel="noopener">
       <div class="num">01</div>
-      <h2>The console</h2>
-      <p>One night, one alert, one closed report. Run it yourself.</p>
-      <div class="tag">Run the incident</div>
-    </a>
-
-    <a class="door sample" href="./demo/film/">
-      <div class="num">Sample</div>
-      <h2>Fleet film</h2>
-      <p>Brand and web craft, the kind of work your other sites would get. Not
-      the monitoring product.</p>
-      <div class="tag">Watch the film</div>
+      <h2>The website</h2>
+      <p>What your customers would see. Built and working, on a phone.</p>
+      <div class="tag">Open the website</div>
     </a>
 
     <a class="door" href="./deck/">
       <div class="num">02</div>
-      <h2>The team</h2>
-      <p>Who builds it, who works on the business, and why it is one team.</p>
-      <div class="tag">Open the deck</div>
+      <h2>The plan</h2>
+      <p>Who builds it, who runs the business, and why it is one team.</p>
+      <div class="tag">Open the plan</div>
     </a>
 
     <a class="door" href="./agreement/">
       <div class="num">03</div>
       <h2>The agreement</h2>
-      <p>Scope, responsibility and terms. Download the version for your attorney.</p>
+      <p>Scope, responsibility, terms. A copy for your attorney.</p>
       <div class="tag">Read the terms</div>
     </a>
-
-    <div class="door next" id="next">
-      <div class="num">04</div>
-      <h2>Next step</h2>
-      <p>Questions, or a walkthrough on a call. Reply to Keenan and we will book
-      thirty minutes.</p>
-      <div class="tag">Reply to Keenan</div>
-    </div>
   </div>
 
   <div class="foot">
-    <span class="line">EverGuard &middot; O&#699;ahu</span>
-    <span class="line">Prepared for Chris Calderon &middot; Confidential</span>
+    <span class="line">Keenan Miller Technology Solutions &middot; Joe CXO</span>
+    <!-- id="next" stays here: the agreement links to ../#next in two places. -->
+    <span class="line" id="next">Questions, or a walkthrough? Reply to Keenan</span>
   </div>
 
 </div>

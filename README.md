@@ -16,45 +16,73 @@ Live: **https://everguard-proposal.netlify.app**, behind a shared access code
 checked at the edge, so the site serves nothing without it. Ask Joey for the
 code. Nothing has been sent to the client yet.
 
-## Four doors
+## Three doors, one screen
 
-The landing page is the room, in story order. The console comes first on
-purpose: a brochure being opened is not proof, so the product proves the paper.
+The landing page is the room. It fits a single screen with no scrolling, on a
+phone included, because she should see the whole offer at once rather than
+discover it. That is done structurally: the page is a `100svh` flex column and
+the doors are the only part that flexes, so they absorb the leftover height and
+overflow is impossible. On a short phone the door descriptions drop out rather
+than the headings shrinking.
 
 | | Door | Where |
 |---|---|---|
-| 01 | **The console** | `/demo/` One night, one alert, one closed report. |
-| 02 | **The team** | `/deck/` The partnership deck. |
+| 01 | **The website** | `https://everguard-website.netlify.app` What her customers would see. Separate site, new tab. |
+| 02 | **The plan** | `/deck/` The partnership deck. Called "the plan" everywhere she reads, because operators do not say deck. |
 | 03 | **The agreement** | `/agreement/` Terms, plus a plain PDF for an attorney. |
-| 04 | **Next step** | On the landing page: reply to Keenan and book thirty minutes. |
 
-## The console
+"Reply to Keenan" is the footer line, not a fourth box, and it keeps
+`id="next"` because `web/agreement/index.html` links to `../#next` twice.
 
-`web/demo/index.html` is hand-built, no framework and no design runtime. It
-plays a single incident: four cameras, motion on CAM 02, an analytics flag, an
-operator verifying, a timestamped voice-down, the subject leaving, cleared
-without dispatch, then an incident report with a timeline, evidence thumbnails
-and one line a client could be sent. Play, pause and replay. Everything sits in
-normal document flow, so there is no sticky stage and no scroll hijacking: the
-previous build put fixed furniture over the picture and it collided on phones.
+The monitoring console and the EVERGUARD // ROLL CALL film used to be doors 01
+and a sample card. Joey removed both on 2026-09-15: the landing was too
+complex. They are not deleted from history, only from the site, and
+`git show c1d0a41:web/demo/index.html` brings either back. **Worth knowing:**
+the console was the only artifact that demonstrated a monitoring product, so
+the proposal's product claim now rests entirely on the plan's slides.
 
-The earlier cinematic version, EVERGUARD // ROLL CALL, is kept at
-`web/demo/film/` and is not linked from anywhere. It is worth keeping for the
-HUD and the transitions, but a wrapped vehicle is packaging, not the product.
+## The website
+
+`demo-site/` is a second, separate Netlify project:
+**https://everguard-website.netlify.app**, behind the same access code.
+
+It is separate rather than a folder on this site because the export is written
+for a domain root. `app.js` picks a service from path segment `[1]`, and about
+twenty asset paths plus the coastline `fetch` are all `/`-prefixed, so from a
+subfolder every service page would quietly render the home page instead. At a
+root it needs no changes.
+
+- `demo-site/site/` is what deploys. Do not hand-edit it.
+- `demo-site/optimize.py` rebuilds it from the pristine export on the Desktop.
+  Re-run it when the designer sends a new one. It re-encodes the photographs,
+  drops two orphan images, resizes the shields, rewrites the filename
+  references and appends the phone fixes. **Assets went 16.1MB to 663KB**; the
+  export shipped photographs as lossless PNG, which is roughly 13MB on a home
+  page someone opens on a phone.
+- `demo-site/ORIGINAL-ASSETS.md` records the original sizes and md5s, so the
+  change is auditable without the Desktop copy.
+- The two `gate.ts` files are copies on purpose: pointing one site at the
+  other's edge function is undocumented and would ship an ungated site if it
+  silently failed. Keep them in step. They should differ only in the two lines
+  of gate copy, which the demo uses to explain that the code is the same one.
+  `diff netlify/edge-functions/gate.ts demo-site/netlify/edge-functions/gate.ts`
+
+She enters the code twice, once per host. That is unavoidable: `netlify.app`
+is on the public suffix list, so the cookie cannot span two subdomains, and
+putting the code in a link would mean committing it to a public repo.
 
 ## Layout
 
-- `web/` is what deploys. `netlify.toml` publishes it.
-- `web/index.html` is the hub page.
-- `web/deck/` is the deck. It is the Claude Design export served as is, with one
-  added line of CSS that hides the design-tool thumbnail rail so it presents
-  full bleed.
+- `web/` is what deploys for the proposal. `netlify.toml` publishes it.
+- `web/index.html` is the hub page, hand-written.
+- `web/deck/index.html` is **generated by `build.py`** and must not be
+  hand-edited. The script lets the Claude Design export render once in headless
+  Chrome, then keeps only the deck stylesheet and its seven slides in scaled
+  16:9 frames. Its exit strip is a string literal inside `build.py`.
 - `source/` holds the original exports. `EverGuard-Partnership-Deck.current.dc.html`
   is the one to work from. `Partnership-Deck.older.dc.html` is an earlier
   version, kept only so nobody edits the wrong file.
-- `assets/` holds the three images the deck uses.
-
-A responsive rebuild is in progress on a `web-build` branch.
+- `web/deck/assets/` holds the three images the deck uses.
 
 ## House rules
 
@@ -74,6 +102,34 @@ No build step. Open `web/index.html` in a browser, or serve the folder:
 
 ```
 cd web && python3 -m http.server 8899
+cd demo-site/site && python3 -m http.server 8931   # the website needs a server
 ```
 
-Deploys are manual and Joey runs them.
+The website must be served, not opened as a file: its links are root-relative
+and it fetches the coastline data.
+
+## Deploying: two projects, two commands
+
+This repo now ships **two** Netlify projects, and the CLI reads `netlify.toml`
+from the directory you are in, not from the repo root. Always pass `--site`, so
+a deploy cannot wander into the wrong project or offer to create a new one.
+
+```
+# the proposal
+netlify deploy --prod --site 2bc6ca31-c491-4e24-879d-41fe35f1d734
+
+# the website (from demo-site/)
+cd demo-site && netlify deploy --prod --site 7e6717a8-cf40-46c3-8608-01521b03c055
+```
+
+Then prove the gate on both, on an asset as well as on a page, because a
+missing environment variable used to fail open:
+
+```
+curl -sI https://everguard-proposal.netlify.app/ | head -1              # 401
+curl -sI https://everguard-website.netlify.app/ | head -1               # 401
+curl -sI https://everguard-website.netlify.app/assets/eg-patrol.webp | head -1   # 401
+```
+
+`gate.ts` now fails **closed**: with no `DECK_PASSWORD` set it returns 503
+instead of serving the site. Deploys are manual and Joey runs them.
