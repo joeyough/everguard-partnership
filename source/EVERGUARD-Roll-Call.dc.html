@@ -34,7 +34,7 @@ body::after{content:'';position:fixed;inset:-12%;pointer-events:none;z-index:90;
 @keyframes dashFlow{to{stroke-dashoffset:-48}}
 @keyframes shakeS{0%,100%{transform:none}20%{transform:translate(3px,-2px)}40%{transform:translate(-3px,2px)}60%{transform:translate(2px,-1px)}80%{transform:translate(-1px,1px)}}
 @keyframes glowPulse{0%,100%{box-shadow:0 0 0 rgba(255,106,0,0)}50%{box-shadow:0 0 26px rgba(255,106,0,.22)}}
-@media (max-width:700px){[data-rail-label]{display:none}}
+@media (max-width:700px){[data-rail-label]{display:none}[data-dispatch]{right:40px !important}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001s !important;animation-iteration-count:1 !important;transition-duration:.001s !important}body::after{animation:none}}
 </style>
 </helmet>
@@ -98,12 +98,12 @@ body::after{content:'';position:fixed;inset:-12%;pointer-events:none;z-index:90;
             <ellipse cx="118" cy="276" rx="50" ry="22" fill="rgba(255,240,220,.75)" style="filter:blur(15px);opacity:{{ hlOp }};transition:opacity .3s"></ellipse>
             <path d="M818,266 L790,262 L788,290 L816,294 Z" fill="#CC4E00"></path>
             <g onClick="{{ toggleLights }}" cursor="pointer">
-              <rect x="492" y="116" width="10" height="10" fill="#141414"></rect>
-              <rect x="566" y="116" width="10" height="10" fill="#141414"></rect>
-              <rect x="470" y="104" width="128" height="13" rx="3" fill="#141414" stroke="#333" stroke-width="1"></rect>
-              <rect x="477" y="107" width="52" height="7" rx="2" fill="#FF6A00" style="opacity:{{ lensOp }};animation:{{ lbA }}"></rect>
-              <rect x="538" y="107" width="52" height="7" rx="2" fill="#FF6A00" style="opacity:{{ lensOp }};animation:{{ lbB }}"></rect>
-              <ellipse cx="534" cy="102" rx="90" ry="24" fill="rgba(255,106,0,.45)" style="filter:blur(18px);opacity:{{ lbGlowOp }};animation:{{ lbGlowAnim }}"></ellipse>
+              <rect x="492" y="130" width="10" height="10" fill="#141414"></rect>
+              <rect x="566" y="130" width="10" height="10" fill="#141414"></rect>
+              <rect x="470" y="118" width="128" height="13" rx="3" fill="#141414" stroke="#333" stroke-width="1"></rect>
+              <rect x="477" y="121" width="52" height="7" rx="2" fill="#FF6A00" style="opacity:{{ lensOp }};animation:{{ lbA }}"></rect>
+              <rect x="538" y="121" width="52" height="7" rx="2" fill="#FF6A00" style="opacity:{{ lensOp }};animation:{{ lbB }}"></rect>
+              <ellipse cx="534" cy="116" rx="90" ry="24" fill="rgba(255,106,0,.45)" style="filter:blur(18px);opacity:{{ lbGlowOp }};animation:{{ lbGlowAnim }}"></ellipse>
             </g>
             <text x="460" y="322" text-anchor="middle" font-family="Orbitron" font-weight="800" font-size="40" letter-spacing="5" fill="{{ carLetter }}" stroke="{{ carLetterStroke }}" stroke-width="0.6" style="transition:fill .45s ease-out">EVERGUARD</text>
             <text x="460" y="356" text-anchor="middle" font-family="Orbitron" font-weight="700" font-size="13" letter-spacing="6" fill="{{ carLetter }}" stroke="{{ carLetterStroke }}" stroke-width="0.4" style="transition:fill .45s ease-out">SECURITY · UNIT {{ unitNumber }}</text>
@@ -267,7 +267,7 @@ body::after{content:'';position:fixed;inset:-12%;pointer-events:none;z-index:90;
           <text x="8" y="158" font-family="Montserrat" font-size="11" letter-spacing="2.5" fill="#777">KAENA PT</text>
         </svg>
       </div>
-      <div style="position:absolute;right:0;top:0;bottom:0;width:clamp(150px,22vw,230px);padding:calc(60px + 8svh) 18px 60px;background:linear-gradient(270deg, rgba(12,12,12,.9), transparent);display:flex;flex-direction:column;gap:12px;overflow:hidden;pointer-events:none">
+      <div data-dispatch="1" style="position:absolute;right:180px;top:0;bottom:0;width:clamp(140px,20vw,210px);padding:calc(60px + 8svh) 18px 60px;background:linear-gradient(270deg, rgba(12,12,12,.9), transparent);display:flex;flex-direction:column;gap:12px;overflow:hidden;pointer-events:none">
         <div style="font-family:Orbitron;font-size:9px;letter-spacing:.3em;color:rgba(230,230,230,.5);border-bottom:1px solid #2E2E2E;padding-bottom:8px">DISPATCH</div>
         <sc-for list="{{ feed }}" as="e" hint-placeholder-count="5">
           <div style="animation:tickIn .4s ease-out both;font-size:10px;letter-spacing:.1em;line-height:1.5;color:rgba(230,230,230,.8)"><span style="font-family:Orbitron;color:#FF6A00">{{ e.t }}</span>&nbsp; {{ e.m }}</div>
@@ -278,7 +278,7 @@ body::after{content:'';position:fixed;inset:-12%;pointer-events:none;z-index:90;
     <div data-screen-label="05 CLOSE" style="position:absolute;inset:0;opacity:{{ b4o }};pointer-events:{{ b4pe }};transition:opacity 480ms ease-out;background:radial-gradient(ellipse at 50% 60%, #1e1e1e 0%, #131313 55%, #0c0c0c 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;text-align:center;padding:0 6vw">
       <div style="font-family:Orbitron;font-weight:800;font-size:clamp(34px,7vw,64px);letter-spacing:.1em;transform:scale({{ closeScale }});transition:transform .9s cubic-bezier(.2,.8,.2,1)"><span style="color:#E6E6E6">EVER</span><span style="color:#FF6A00">GUARD</span></div>
       <div style="width:110px;height:1px;background:#444"></div>
-      <div style="font-size:clamp(14px,1.8vw,17px);letter-spacing:.06em;color:#E6E6E6;min-height:1.6em"><span ref="{{ tagRef }}"></span><span style="display:inline-block;width:10px;height:2px;background:#FF6A00;margin-left:4px;vertical-align:middle;animation:recblink 1s steps(1) infinite"></span></div>
+      <div style="font-size:clamp(14px,1.8vw,17px);letter-spacing:.06em;color:#E6E6E6;min-height:1.6em"><span>{{ tagText }}</span><span style="display:inline-block;width:10px;height:2px;background:#FF6A00;margin-left:4px;vertical-align:middle;animation:recblink 1s steps(1) infinite"></span></div>
       <a href="#partnership" onClick="{{ clickSfx }}" style="display:inline-block;margin-top:14px;border:1px solid #FF6A00;color:#FF6A00;text-decoration:none;font-family:Orbitron;font-size:12px;letter-spacing:.22em;padding:15px 32px;min-height:44px;box-sizing:border-box;transition:border-color .25s,color .25s;animation:glowPulse 2.6s ease-in-out infinite" style-hover="border-color:#CC4E00;color:#CC4E00">SEE THE PARTNERSHIP</a>
     </div>
 
@@ -331,9 +331,9 @@ body::after{content:'';position:fixed;inset:-12%;pointer-events:none;z-index:90;
         <path d="M170,420 L186,346 L254,330 L318,346 L334,420" fill="none" stroke="#141414" stroke-width="16"></path>
         <path d="M590,420 L606,346 L674,330 L738,346 L754,420" fill="none" stroke="#141414" stroke-width="16"></path>
         <rect x="336" y="400" width="252" height="18" fill="#141414"></rect>
-        <rect x="470" y="104" width="128" height="13" rx="3" fill="#141414"></rect>
-        <rect x="477" y="107" width="52" height="7" rx="2" fill="#FFB066" style="animation:strobeA .3s steps(1) infinite"></rect>
-        <rect x="538" y="107" width="52" height="7" rx="2" fill="#FFB066" style="animation:strobeB .3s steps(1) infinite"></rect>
+        <rect x="470" y="118" width="128" height="13" rx="3" fill="#141414"></rect>
+        <rect x="477" y="121" width="52" height="7" rx="2" fill="#FFB066" style="animation:strobeA .3s steps(1) infinite"></rect>
+        <rect x="538" y="121" width="52" height="7" rx="2" fill="#FFB066" style="animation:strobeB .3s steps(1) infinite"></rect>
         <text x="460" y="322" text-anchor="middle" font-family="Orbitron" font-weight="800" font-size="40" letter-spacing="5" fill="#1A1A1A">EVERGUARD</text>
         <circle cx="250" cy="420" r="66" fill="#0d0d0d"></circle>
         <circle cx="670" cy="420" r="66" fill="#0d0d0d"></circle>
@@ -356,9 +356,9 @@ body::after{content:'';position:fixed;inset:-12%;pointer-events:none;z-index:90;
 <script type="text/x-dc" data-dc-script data-props="{&quot;skipBoot&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Demo&quot;},&quot;unitNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;04&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Brand&quot;},&quot;scanlineOpacity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.07,&quot;min&quot;:0,&quot;max&quot;:0.2,&quot;step&quot;:0.01,&quot;unit&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;HUD&quot;}}">
 class Component extends DCLogic {
   state = { booted: false, bootFading: false, bootProgress: 0, beat: 0, passActive: false, sound: false,
-    livery: 'bo', crew: 'carrier', shift: 'day', yaw: -6, feed: [], cams: 24, doorHover: false, hot: null, lightsOn: false };
+    livery: 'bo', crew: 'carrier', shift: 'day', yaw: -6, feed: [], cams: 24, doorHover: false, hot: null, lightsOn: false, tagText: '' };
   frameRef = React.createRef(); clockRef = React.createRef(); coordRef = React.createRef();
-  rollRef = React.createRef(); tagRef = React.createRef(); scanRef = React.createRef();
+  rollRef = React.createRef(); scanRef = React.createRef();
   pingRef0 = React.createRef(); pingRef1 = React.createRef(); pingRef2 = React.createRef();
   hstNow() { return new Date(Date.now() - 36000000); }
   p2(n) { return String(n).padStart(2, '0'); }
@@ -423,10 +423,11 @@ class Component extends DCLogic {
     this.onScroll();
   }
   componentDidUpdate(prevProps, prevState) {
+    if (!prevState) return;
     if (prevState.beat !== 4 && this.state.beat === 4) this.typeTag();
     if (prevState.beat === 4 && this.state.beat !== 4) {
       clearInterval(this.tagT);
-      if (this.tagRef.current) this.tagRef.current.textContent = '';
+      this.setState({ tagText: '' });
     }
     if (prevState.beat !== 1 && this.state.beat === 1) setTimeout(() => this.scanCar(), 600);
   }
@@ -454,15 +455,13 @@ class Component extends DCLogic {
     }, 55);
   }
   typeTag() {
-    const el = this.tagRef.current;
-    if (!el) return;
     const text = 'Stronger solutions, safer tomorrows.';
     let i = 0;
-    el.textContent = '';
     clearInterval(this.tagT);
+    this.setState({ tagText: '' });
     this.tagT = setInterval(() => {
       i++;
-      el.textContent = text.slice(0, i);
+      this.setState({ tagText: text.slice(0, i) });
       if (i >= text.length) clearInterval(this.tagT);
     }, 38);
   }
@@ -657,7 +656,8 @@ class Component extends DCLogic {
       clickSfx: this.click,
       goNext: () => this.goToBeat(this.state.beat + 1),
       clockRef: this.clockRef, frameRef: this.frameRef, coordRef: this.coordRef,
-      rollRef: this.rollRef, tagRef: this.tagRef, scanRef: this.scanRef,
+      tagText: s.tagText,
+      rollRef: this.rollRef, scanRef: this.scanRef,
       pingRef0: this.pingRef0, pingRef1: this.pingRef1, pingRef2: this.pingRef2
     });
   }

@@ -178,6 +178,33 @@ a { color: var(--org); } a:hover { color: #ff8a33; }
 .cb-l, .cb-r { display: flex; align-items: center; gap: 18px; white-space: nowrap; }
 .cb-t { font-family: "Orbitron", sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.07em; }
 .cb-t b { color: var(--org); font-weight: 700; }
+/* — slide 03 route — */
+.rt-label { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 22px; fill: #ececec; letter-spacing: 0.03em; }
+.rt-sub { font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 15px; fill: rgba(236,236,236,0.55); letter-spacing: 0.18em; text-transform: uppercase; }
+/* — slide 07 duo intro — */
+.intro { display: grid; grid-template-columns: 1fr 320px 200px 320px 1fr; column-gap: 30px; position: relative; z-index: 2; height: 640px; }
+.in-name { font-family: "Orbitron", sans-serif; font-weight: 800; font-size: 46px; line-height: 1; margin: 0; }
+.in-sub { font-family: "Orbitron", sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--org); margin-top: 12px; }
+.in-rule { width: 56px; height: 4px; background: var(--org); margin-top: 18px; }
+.in-item h4 { font-weight: 800; font-size: 23px; margin: 0; line-height: 1.2; }
+.in-item p { font-size: 20.5px; line-height: 1.3; margin: 5px 0 0; color: var(--mut); }
+.in-mid { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; }
+.in-mid .vline { width: 1px; flex: 1; background: var(--div); }
+.seas { font-family: "Orbitron", sans-serif; font-weight: 700; font-size: 23px; letter-spacing: 0.14em; }
+.built { display: flex; align-items: center; gap: 34px; margin-top: auto; position: relative; z-index: 2; }
+.built .bl { flex: 1; height: 1px; background: var(--div); }
+.built span { font-size: 19px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; white-space: nowrap; color: var(--mut2); }
+/* — slide 09 timeline — */
+.tl { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 46px; position: relative; z-index: 2; }
+.tl::before { content: ""; position: absolute; top: 12px; left: 13px; width: calc(66.66% + 30px); height: 3px; background: var(--org); }
+.tl-dot { width: 26px; height: 26px; border-radius: 50%; background: var(--org); box-shadow: 0 0 0 6px rgba(255,106,0,0.18); position: relative; z-index: 1; }
+.tl-mon { font-family: "Orbitron", sans-serif; font-weight: 800; font-size: 33px; margin-top: 26px; letter-spacing: 0.04em; text-transform: uppercase; }
+.tl-ph { font-weight: 800; font-size: 27px; margin-top: 14px; letter-spacing: 0.02em; }
+/* — slide 11 tier-3 rows — */
+.r3 { display: grid; grid-template-columns: 400px 1fr; position: relative; z-index: 2; }
+.r3 > div { padding: 25px 0; border-bottom: 1px solid var(--div); }
+.r3-k { font-family: "Orbitron", sans-serif; font-weight: 700; font-size: 29px; color: var(--org); text-transform: uppercase; letter-spacing: 0.04em; display: flex; align-items: center; }
+.r3-v { font-size: 23px; line-height: 1.4; color: var(--mut2); display: flex; align-items: center; }
 @media (prefers-reduced-motion: no-preference) {
   [data-deck-active] .rise { animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
   @keyframes rise { from { opacity: 0; transform: translateY(16px); } }
@@ -292,292 +319,402 @@ deck-stage{display:block;max-width:1600px;margin:0 auto;padding:18px 18px 40px}
     <div data-dc-tpl="101" class="foot" style="right: 660px;"><span data-dc-tpl="102">Stronger solutions, safer tomorrows.</span></div>
     
   </section></div>
-<div class="frame"><section data-dc-tpl="103" class="slide content" data-label="03 · A broader scope" data-screen-label="03 03 · A broader scope" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="2">
-        <div data-dc-tpl="104" class="ghost" aria-hidden="true">03</div>
-    <div data-dc-tpl="105" class="head">
-      <div data-dc-tpl="106" class="kick"><span data-dc-tpl="107" class="kn">03</span><span data-dc-tpl="108" class="kb"></span><span data-dc-tpl="109" class="ks">A broader scope</span></div>
-      <div data-dc-tpl="110" class="bstack">
-        <div data-dc-tpl="111" class="brand"><svg data-dc-tpl="112" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="113" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="114" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="115" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="116">GUARD</b></div><div data-dc-tpl="117" class="vr" style="height: 40px;"></div><div data-dc-tpl="118" class="bp1">Keenan Miller × Joe CXO</div></div>
+<div class="frame"><section data-dc-tpl="103" class="slide" data-label="03 · More to operate" data-screen-label="03 03 · More to operate" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="2" style="padding: 0px;">
+    <img data-dc-tpl="104" src="assets/route-full.png" alt="More opportunities, more to operate — Everguard SUV on the Oʻahu route map" style="position: absolute; inset: 0px; width: 100%; height: 100%; object-fit: cover;">
+    <div data-dc-tpl="105" aria-hidden="true" style="position: absolute; right: 34px; bottom: 20px; width: 230px; height: 230px; border-radius: 50%; background: radial-gradient(circle, rgb(11, 14, 17) 0%, rgb(11, 14, 17) 58%, transparent 74%);"></div>
+  </section></div>
+<div class="frame"><section data-dc-tpl="106" class="slide content" data-label="04 · A broader scope" data-screen-label="04 04 · A broader scope" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="3">
+        <div data-dc-tpl="107" class="ghost" aria-hidden="true">04</div>
+    <div data-dc-tpl="108" class="head">
+      <div data-dc-tpl="109" class="kick"><span data-dc-tpl="110" class="kn">04</span><span data-dc-tpl="111" class="kb"></span><span data-dc-tpl="112" class="ks">A broader scope</span></div>
+      <div data-dc-tpl="113" class="bstack">
+        <div data-dc-tpl="114" class="brand"><svg data-dc-tpl="115" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="116" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="117" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="118" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="119">GUARD</b></div><div data-dc-tpl="120" class="vr" style="height: 40px;"></div><div data-dc-tpl="121" class="bp1">Keenan Miller × Joe CXO</div></div>
       </div>
     </div>
-    <h2 data-dc-tpl="119" class="slide-title" style="font-size: 43px;">More opportunity. More responsibility.<br data-dc-tpl="120"><em data-dc-tpl="121">A more connected business.</em></h2>
-    <div data-dc-tpl="122" style="display: grid; grid-template-columns: 470px 1fr; column-gap: 56px; margin-top: 46px; align-items: stretch; position: relative; z-index: 2;">
-      <div data-dc-tpl="123" class="rise" style="display: flex; flex-direction: column; gap: 20px;">
-        <p data-dc-tpl="124" style="font-size: 22px; line-height: 1.42; margin: 0px; color: var(--mut2);">As you take on new clients, separate operations from the former parent organization, and expand into new opportunities, more pieces of the business begin depending on one another.</p>
-        <p data-dc-tpl="125" style="font-size: 22px; line-height: 1.42; margin: 0px; color: var(--mut2);">From data and systems to offices, dispatch, client support and vendors — it’s all connected.</p>
-        <p data-dc-tpl="126" style="font-size: 22px; line-height: 1.42; margin: 0px; color: var(--mut2);">The opportunity is to build it as one integrated operation, not a collection of separate projects.</p>
-        <figure data-dc-tpl="127" class="plate" style="position: relative; margin: 10px 0px 0px; flex: 1 1 0%; min-height: 210px; clip-path: polygon(0px 0px, 100% 0px, 100% calc(100% - 44px), calc(100% - 44px) 100%, 0px 100%);">
-          <img data-dc-tpl="128" src="assets/hawaii-camera.png" alt="Surveillance camera over the Honolulu skyline">
-          <div data-dc-tpl="129" class="scan"></div>
-          <div data-dc-tpl="130" style="position: absolute; inset: 0px; background: linear-gradient(rgba(16, 16, 16, 0.2), transparent 40%, rgba(16, 16, 16, 0.88));"></div>
-          <div data-dc-tpl="131" class="vf vf-tl" style="width: 26px; height: 26px;"></div><div data-dc-tpl="132" class="vf vf-tr" style="width: 26px; height: 26px;"></div>
-          <figcaption data-dc-tpl="133" style="position: absolute; left: 24px; right: 24px; bottom: 18px;">
-            <div data-dc-tpl="134" style="font-family: Orbitron, sans-serif; font-weight: 700; font-size: 25px; text-transform: uppercase;">A stronger foundation</div>
-            <div data-dc-tpl="135" style="font-family: Orbitron, sans-serif; font-weight: 700; font-size: 25px; text-transform: uppercase; color: var(--org);">for what comes next.</div>
+    <h2 data-dc-tpl="122" class="slide-title" style="font-size: 43px;">More opportunity. More responsibility.<br data-dc-tpl="123"><em data-dc-tpl="124">A more connected business.</em></h2>
+    <div data-dc-tpl="125" style="display: grid; grid-template-columns: 470px 1fr; column-gap: 56px; margin-top: 46px; align-items: stretch; position: relative; z-index: 2;">
+      <div data-dc-tpl="126" class="rise" style="display: flex; flex-direction: column; gap: 20px;">
+        <p data-dc-tpl="127" style="font-size: 22px; line-height: 1.42; margin: 0px; color: var(--mut2);">As you take on new clients, separate operations from the former parent organization, and expand into new opportunities, more pieces of the business begin depending on one another.</p>
+        <p data-dc-tpl="128" style="font-size: 22px; line-height: 1.42; margin: 0px; color: var(--mut2);">From data and systems to offices, dispatch, client support and vendors — it’s all connected.</p>
+        <p data-dc-tpl="129" style="font-size: 22px; line-height: 1.42; margin: 0px; color: var(--mut2);">The opportunity is to build it as one integrated operation, not a collection of separate projects.</p>
+        <figure data-dc-tpl="130" class="plate" style="position: relative; margin: 10px 0px 0px; flex: 1 1 0%; min-height: 210px; clip-path: polygon(0px 0px, 100% 0px, 100% calc(100% - 44px), calc(100% - 44px) 100%, 0px 100%);">
+          <img data-dc-tpl="131" src="assets/hawaii-camera.png" alt="Surveillance camera over the Honolulu skyline">
+          <div data-dc-tpl="132" class="scan"></div>
+          <div data-dc-tpl="133" style="position: absolute; inset: 0px; background: linear-gradient(rgba(16, 16, 16, 0.2), transparent 40%, rgba(16, 16, 16, 0.88));"></div>
+          <div data-dc-tpl="134" class="vf vf-tl" style="width: 26px; height: 26px;"></div><div data-dc-tpl="135" class="vf vf-tr" style="width: 26px; height: 26px;"></div>
+          <figcaption data-dc-tpl="136" style="position: absolute; left: 24px; right: 24px; bottom: 18px;">
+            <div data-dc-tpl="137" style="font-family: Orbitron, sans-serif; font-weight: 700; font-size: 25px; text-transform: uppercase;">A stronger foundation</div>
+            <div data-dc-tpl="138" style="font-family: Orbitron, sans-serif; font-weight: 700; font-size: 25px; text-transform: uppercase; color: var(--org);">for what comes next.</div>
           </figcaption>
         </figure>
       </div>
-      <div data-dc-tpl="136" class="rise">
-        <div data-dc-tpl="137" class="panel-h">
-          <h3 data-dc-tpl="138">Your business</h3>
-          <div data-dc-tpl="139" class="panel-sub"><span data-dc-tpl="140">Expanded scope</span><span data-dc-tpl="141">Greater opportunity</span><span data-dc-tpl="142">Brighter future</span></div>
+      <div data-dc-tpl="139" class="rise">
+        <div data-dc-tpl="140" class="panel-h">
+          <h3 data-dc-tpl="141">Your business</h3>
+          <div data-dc-tpl="142" class="panel-sub"><span data-dc-tpl="143">Expanded scope</span><span data-dc-tpl="144">Greater opportunity</span><span data-dc-tpl="145">Brighter future</span></div>
         </div>
-        <div data-dc-tpl="143" class="p-grid">
-          <div data-dc-tpl="144" data-i="1">
-            <div data-dc-tpl="145" class="p-head"><svg data-dc-tpl="146" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="147" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle data-dc-tpl="148" cx="9" cy="7" r="4"></circle><path data-dc-tpl="149" d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path data-dc-tpl="150" d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Clients &amp; relationships</div>
-            <ul data-dc-tpl="151" class="p-list"><li data-dc-tpl="152">Existing clients</li><li data-dc-tpl="153">Newly acquired clients</li><li data-dc-tpl="154">Expanding opportunities</li></ul>
+        <div data-dc-tpl="146" class="p-grid">
+          <div data-dc-tpl="147" data-i="1">
+            <div data-dc-tpl="148" class="p-head"><svg data-dc-tpl="149" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="150" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle data-dc-tpl="151" cx="9" cy="7" r="4"></circle><path data-dc-tpl="152" d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path data-dc-tpl="153" d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Clients &amp; relationships</div>
+            <ul data-dc-tpl="154" class="p-list"><li data-dc-tpl="155">Existing clients</li><li data-dc-tpl="156">Newly acquired clients</li><li data-dc-tpl="157">Expanding opportunities</li></ul>
           </div>
-          <div data-dc-tpl="155" data-i="2">
-            <div data-dc-tpl="156" class="p-head"><svg data-dc-tpl="157" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="158" d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path data-dc-tpl="159" d="M14 2v4a2 2 0 0 0 2 2h4"></path><path data-dc-tpl="160" d="M10 9H8"></path><path data-dc-tpl="161" d="M16 13H8"></path><path data-dc-tpl="162" d="M16 17H8"></path></svg>Data &amp; information</div>
-            <ul data-dc-tpl="163" class="p-list"><li data-dc-tpl="164">Microsoft 365</li><li data-dc-tpl="165">SharePoint</li><li data-dc-tpl="166">File transition &amp; security</li></ul>
+          <div data-dc-tpl="158" data-i="2">
+            <div data-dc-tpl="159" class="p-head"><svg data-dc-tpl="160" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="161" d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path data-dc-tpl="162" d="M14 2v4a2 2 0 0 0 2 2h4"></path><path data-dc-tpl="163" d="M10 9H8"></path><path data-dc-tpl="164" d="M16 13H8"></path><path data-dc-tpl="165" d="M16 17H8"></path></svg>Data &amp; information</div>
+            <ul data-dc-tpl="166" class="p-list"><li data-dc-tpl="167">Microsoft 365</li><li data-dc-tpl="168">SharePoint</li><li data-dc-tpl="169">File transition &amp; security</li></ul>
           </div>
-          <div data-dc-tpl="167" data-i="3">
-            <div data-dc-tpl="168" class="p-head"><svg data-dc-tpl="169" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="170" width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path data-dc-tpl="171" d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path data-dc-tpl="172" d="M12 11h4"></path><path data-dc-tpl="173" d="M12 16h4"></path><path data-dc-tpl="174" d="M8 11h.01"></path><path data-dc-tpl="175" d="M8 16h.01"></path></svg>Business entities</div>
-            <ul data-dc-tpl="176" class="p-list"><li data-dc-tpl="177">Structure &amp; separation</li><li data-dc-tpl="178">Policies &amp; compliance</li><li data-dc-tpl="179">Financial alignment</li></ul>
+          <div data-dc-tpl="170" data-i="3">
+            <div data-dc-tpl="171" class="p-head"><svg data-dc-tpl="172" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="173" width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path data-dc-tpl="174" d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path data-dc-tpl="175" d="M12 11h4"></path><path data-dc-tpl="176" d="M12 16h4"></path><path data-dc-tpl="177" d="M8 11h.01"></path><path data-dc-tpl="178" d="M8 16h.01"></path></svg>Business entities</div>
+            <ul data-dc-tpl="179" class="p-list"><li data-dc-tpl="180">Structure &amp; separation</li><li data-dc-tpl="181">Policies &amp; compliance</li><li data-dc-tpl="182">Financial alignment</li></ul>
           </div>
-          <div data-dc-tpl="180" data-i="4">
-            <div data-dc-tpl="181" class="p-head"><svg data-dc-tpl="182" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="183" d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>Infrastructure</div>
-            <ul data-dc-tpl="184" class="p-list"><li data-dc-tpl="185">Cloud &amp; endpoints</li><li data-dc-tpl="186">Networks &amp; connectivity</li><li data-dc-tpl="187">Security &amp; backup</li></ul>
+          <div data-dc-tpl="183" data-i="4">
+            <div data-dc-tpl="184" class="p-head"><svg data-dc-tpl="185" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="186" d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>Infrastructure</div>
+            <ul data-dc-tpl="187" class="p-list"><li data-dc-tpl="188">Cloud &amp; endpoints</li><li data-dc-tpl="189">Networks &amp; connectivity</li><li data-dc-tpl="190">Security &amp; backup</li></ul>
           </div>
-          <div data-dc-tpl="188" data-i="5">
-            <div data-dc-tpl="189" class="p-head"><svg data-dc-tpl="190" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="191" d="m22 8-6 4 6 4V8Z"></path><rect data-dc-tpl="192" width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>Surveillance &amp; access</div>
-            <ul data-dc-tpl="193" class="p-list"><li data-dc-tpl="194">Camera systems</li><li data-dc-tpl="195">Access control</li><li data-dc-tpl="196">Monitoring infrastructure</li></ul>
+          <div data-dc-tpl="191" data-i="5">
+            <div data-dc-tpl="192" class="p-head"><svg data-dc-tpl="193" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="194" d="m22 8-6 4 6 4V8Z"></path><rect data-dc-tpl="195" width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>Surveillance &amp; access</div>
+            <ul data-dc-tpl="196" class="p-list"><li data-dc-tpl="197">Camera systems</li><li data-dc-tpl="198">Access control</li><li data-dc-tpl="199">Monitoring infrastructure</li></ul>
           </div>
-          <div data-dc-tpl="197" data-i="6">
-            <div data-dc-tpl="198" class="p-head"><svg data-dc-tpl="199" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="200" cx="12" cy="12" r="2"></circle><path data-dc-tpl="201" d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"></path><path data-dc-tpl="202" d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"></path><path data-dc-tpl="203" d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"></path><path data-dc-tpl="204" d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"></path></svg>Dispatch &amp; comms</div>
-            <ul data-dc-tpl="205" class="p-list"><li data-dc-tpl="206">Communication systems</li><li data-dc-tpl="207">Field support</li><li data-dc-tpl="208">Real-time visibility</li></ul>
+          <div data-dc-tpl="200" data-i="6">
+            <div data-dc-tpl="201" class="p-head"><svg data-dc-tpl="202" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="203" cx="12" cy="12" r="2"></circle><path data-dc-tpl="204" d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"></path><path data-dc-tpl="205" d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"></path><path data-dc-tpl="206" d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"></path><path data-dc-tpl="207" d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"></path></svg>Dispatch &amp; comms</div>
+            <ul data-dc-tpl="208" class="p-list"><li data-dc-tpl="209">Communication systems</li><li data-dc-tpl="210">Field support</li><li data-dc-tpl="211">Real-time visibility</li></ul>
           </div>
-          <div data-dc-tpl="209" data-i="7">
-            <div data-dc-tpl="210" class="p-head"><svg data-dc-tpl="211" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="212" cx="12" cy="12" r="10"></circle><path data-dc-tpl="213" d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path data-dc-tpl="214" d="M2 12h20"></path></svg>Websites &amp; digital</div>
-            <ul data-dc-tpl="215" class="p-list"><li data-dc-tpl="216">Company sites</li><li data-dc-tpl="217">Client portals</li><li data-dc-tpl="218">Brand &amp; communications</li></ul>
+          <div data-dc-tpl="212" data-i="7">
+            <div data-dc-tpl="213" class="p-head"><svg data-dc-tpl="214" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="215" cx="12" cy="12" r="10"></circle><path data-dc-tpl="216" d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path data-dc-tpl="217" d="M2 12h20"></path></svg>Websites &amp; digital</div>
+            <ul data-dc-tpl="218" class="p-list"><li data-dc-tpl="219">Company sites</li><li data-dc-tpl="220">Client portals</li><li data-dc-tpl="221">Brand &amp; communications</li></ul>
           </div>
-          <div data-dc-tpl="219" data-i="8">
-            <div data-dc-tpl="220" class="p-head"><svg data-dc-tpl="221" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="222" d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path data-dc-tpl="223" d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path data-dc-tpl="224" d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path data-dc-tpl="225" d="M10 6h4"></path><path data-dc-tpl="226" d="M10 10h4"></path><path data-dc-tpl="227" d="M10 14h4"></path><path data-dc-tpl="228" d="M10 18h4"></path></svg>Offices &amp; facilities</div>
-            <ul data-dc-tpl="229" class="p-list"><li data-dc-tpl="230">Physical locations</li><li data-dc-tpl="231">Network &amp; Wi-Fi</li><li data-dc-tpl="232">Systems &amp; workspace tech</li></ul>
+          <div data-dc-tpl="222" data-i="8">
+            <div data-dc-tpl="223" class="p-head"><svg data-dc-tpl="224" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="225" d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path data-dc-tpl="226" d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path data-dc-tpl="227" d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path data-dc-tpl="228" d="M10 6h4"></path><path data-dc-tpl="229" d="M10 10h4"></path><path data-dc-tpl="230" d="M10 14h4"></path><path data-dc-tpl="231" d="M10 18h4"></path></svg>Offices &amp; facilities</div>
+            <ul data-dc-tpl="232" class="p-list"><li data-dc-tpl="233">Physical locations</li><li data-dc-tpl="234">Network &amp; Wi-Fi</li><li data-dc-tpl="235">Systems &amp; workspace tech</li></ul>
           </div>
-          <div data-dc-tpl="233" data-i="9">
-            <div data-dc-tpl="234" class="p-head"><svg data-dc-tpl="235" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="236" d="M12 22v-5"></path><path data-dc-tpl="237" d="M9 8V2"></path><path data-dc-tpl="238" d="M15 8V2"></path><path data-dc-tpl="239" d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"></path></svg>Vendors &amp; partners</div>
-            <ul data-dc-tpl="240" class="p-list"><li data-dc-tpl="241">Technology vendors</li><li data-dc-tpl="242">Equipment &amp; licensing</li><li data-dc-tpl="243">Ongoing support</li></ul>
+          <div data-dc-tpl="236" data-i="9">
+            <div data-dc-tpl="237" class="p-head"><svg data-dc-tpl="238" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="239" d="M12 22v-5"></path><path data-dc-tpl="240" d="M9 8V2"></path><path data-dc-tpl="241" d="M15 8V2"></path><path data-dc-tpl="242" d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"></path></svg>Vendors &amp; partners</div>
+            <ul data-dc-tpl="243" class="p-list"><li data-dc-tpl="244">Technology vendors</li><li data-dc-tpl="245">Equipment &amp; licensing</li><li data-dc-tpl="246">Ongoing support</li></ul>
           </div>
-        </div>
-      </div>
-    </div>
-    
-    <div data-dc-tpl="245" class="foot"><span data-dc-tpl="246">Stronger solutions, safer tomorrows.</span></div>
-    
-  </section></div>
-<div class="frame"><section data-dc-tpl="247" class="slide content" data-label="04 · The solution approach" data-screen-label="04 04 · The solution approach" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="3">
-        <div data-dc-tpl="248" class="ghost" aria-hidden="true">04</div>
-    <div data-dc-tpl="249" class="head">
-      <div data-dc-tpl="250" class="kick"><span data-dc-tpl="251" class="kn">04</span><span data-dc-tpl="252" class="kb"></span><span data-dc-tpl="253" class="ks">The solution approach</span></div>
-      <div data-dc-tpl="254" class="brand"><svg data-dc-tpl="255" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="256" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="257" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="258" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="259">GUARD</b></div><div data-dc-tpl="260" class="vr" style="height: 40px;"></div><div data-dc-tpl="261" class="bp1">Keenan Miller × Joe CXO</div></div>
-    </div>
-    <h2 data-dc-tpl="262" class="slide-title">Integrated systems <em data-dc-tpl="263">for real-world impact.</em></h2>
-    <div data-dc-tpl="264" class="cols2 rise" style="margin-top: 48px;">
-      <p data-dc-tpl="265" class="lede" style="font-size: 23px;">We design and implement technology systems that connect your people, information and operations — so you can deliver security solutions more effectively, support new clients, and run a stronger, more independent business.</p>
-      <p data-dc-tpl="266" class="lede" style="font-size: 23px;">From surveillance and access-control systems to cloud infrastructure, communications and data management, we build the backbone that helps you operate, respond and grow.</p>
-    </div>
-    <div data-dc-tpl="267" class="cellrow idx rise" style="grid-template-columns: repeat(3, 1fr); row-gap: 42px; margin-top: 52px;">
-      <div data-dc-tpl="268" data-i="1">
-        <div data-dc-tpl="269" class="cell-h"><svg data-dc-tpl="270" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="271" d="m22 8-6 4 6 4V8Z"></path><rect data-dc-tpl="272" width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>Surveillance &amp; monitoring systems</div>
-        <p data-dc-tpl="273" class="cell-b">Scalable camera systems, remote access and centralized monitoring</p>
-      </div>
-      <div data-dc-tpl="274" data-i="2">
-        <div data-dc-tpl="275" class="cell-h"><svg data-dc-tpl="276" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="277" width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path data-dc-tpl="278" d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Access control &amp; facility technology</div>
-        <p data-dc-tpl="279" class="cell-b">Secure facilities, manage access, improve visibility</p>
-      </div>
-      <div data-dc-tpl="280" data-i="3">
-        <div data-dc-tpl="281" class="cell-h"><svg data-dc-tpl="282" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="283" d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>Cloud &amp; data infrastructure</div>
-        <p data-dc-tpl="284" class="cell-b">Microsoft 365, SharePoint, secure file management and backup</p>
-      </div>
-      <div data-dc-tpl="285" data-i="4">
-        <div data-dc-tpl="286" class="cell-h"><svg data-dc-tpl="287" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="288" cx="12" cy="12" r="2"></circle><path data-dc-tpl="289" d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"></path><path data-dc-tpl="290" d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"></path><path data-dc-tpl="291" d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"></path><path data-dc-tpl="292" d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"></path></svg>Communications &amp; dispatch support</div>
-        <p data-dc-tpl="293" class="cell-b">Systems that keep teams connected and coordinated</p>
-      </div>
-      <div data-dc-tpl="294" data-i="5">
-        <div data-dc-tpl="295" class="cell-h"><svg data-dc-tpl="296" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="297" width="20" height="14" x="2" y="3" rx="2"></rect><line data-dc-tpl="298" x1="8" x2="16" y1="21" y2="21"></line><line data-dc-tpl="299" x1="12" x2="12" y1="17" y2="21"></line></svg>Client &amp; operational platforms</div>
-        <p data-dc-tpl="300" class="cell-b">Websites, client portals and business tools</p>
-      </div>
-      <div data-dc-tpl="301" data-i="6">
-        <div data-dc-tpl="302" class="cell-h"><svg data-dc-tpl="303" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="304" d="M12 22v-5"></path><path data-dc-tpl="305" d="M9 8V2"></path><path data-dc-tpl="306" d="M15 8V2"></path><path data-dc-tpl="307" d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"></path></svg>Vendor &amp; device integration</div>
-        <p data-dc-tpl="308" class="cell-b">Equipment, licensing and ongoing support</p>
-      </div>
-    </div>
-    <div data-dc-tpl="309" class="callout rise" style="margin-top: auto;">
-      <p data-dc-tpl="310" class="co1">All the pieces working together.</p>
-      <p data-dc-tpl="311" class="co2">So you can focus on what matters most.</p>
-    </div>
-    
-    <div data-dc-tpl="313" class="foot"><span data-dc-tpl="314">Stronger solutions, safer tomorrows.</span></div>
-    
-  </section></div>
-<div class="frame"><section data-dc-tpl="315" class="slide content" data-label="05 · The path forward" data-screen-label="05 05 · The path forward" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="4">
-        <div data-dc-tpl="316" class="ghost" aria-hidden="true">05</div>
-    <div data-dc-tpl="317" class="head">
-      <div data-dc-tpl="318" class="kick"><span data-dc-tpl="319" class="kn">05</span><span data-dc-tpl="320" class="kb"></span><span data-dc-tpl="321" class="ks">The path forward</span></div>
-      <div data-dc-tpl="322" class="brand"><svg data-dc-tpl="323" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="324" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="325" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="326" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="327">GUARD</b></div><div data-dc-tpl="328" class="vr" style="height: 40px;"></div><div data-dc-tpl="329" class="bp1">Keenan Miller × Joe CXO</div></div>
-    </div>
-    <h2 data-dc-tpl="330" class="slide-title">A clear roadmap <em data-dc-tpl="331">from vision to reality.</em></h2>
-    <div data-dc-tpl="332" class="cols2 rise" style="margin-top: 48px;">
-      <p data-dc-tpl="333" class="lede" style="font-size: 23px;">We take a practical, phased approach to design and implement the systems your business needs — so you can keep moving forward while we build for what’s next.</p>
-      <p data-dc-tpl="334" class="lede" style="font-size: 23px;">From assessing your current environment to full implementation and ongoing support, we focus on real solutions, measurable progress and long-term impact.</p>
-    </div>
-    <div data-dc-tpl="335" class="phases rise" style="margin-top: 52px;">
-      <div data-dc-tpl="336" class="ph">
-        <div data-dc-tpl="337" class="ph-num ph-num-hi"><span data-dc-tpl="338">1</span></div>
-        <h3 data-dc-tpl="339" class="ph-h">Discover &amp; align</h3>
-        <ul data-dc-tpl="340" class="ph-list"><li data-dc-tpl="341">Understand your goals</li><li data-dc-tpl="342">Assess current systems</li><li data-dc-tpl="343">Identify priorities and quick wins</li></ul>
-        <div data-dc-tpl="344" class="ph-wk">Weeks 1–2</div>
-      </div>
-      <div data-dc-tpl="345" class="ph">
-        <div data-dc-tpl="346" class="ph-num"><span data-dc-tpl="347">2</span></div>
-        <h3 data-dc-tpl="348" class="ph-h">Plan &amp; design</h3>
-        <ul data-dc-tpl="349" class="ph-list"><li data-dc-tpl="350">Develop solution architecture</li><li data-dc-tpl="351">Define scopes &amp; timelines</li><li data-dc-tpl="352">Align with business and client needs</li></ul>
-        <div data-dc-tpl="353" class="ph-wk">Weeks 3–6</div>
-      </div>
-      <div data-dc-tpl="354" class="ph">
-        <div data-dc-tpl="355" class="ph-num"><span data-dc-tpl="356">3</span></div>
-        <h3 data-dc-tpl="357" class="ph-h">Implement &amp; transition</h3>
-        <ul data-dc-tpl="358" class="ph-list"><li data-dc-tpl="359">Deploy systems</li><li data-dc-tpl="360">Migrate and secure data</li><li data-dc-tpl="361">Configure infrastructure</li><li data-dc-tpl="362">Train and support your team</li></ul>
-        <div data-dc-tpl="363" class="ph-wk">Weeks 8–12+</div>
-      </div>
-      <div data-dc-tpl="364" class="ph">
-        <div data-dc-tpl="365" class="ph-num"><span data-dc-tpl="366">4</span></div>
-        <h3 data-dc-tpl="367" class="ph-h">Optimize &amp; support</h3>
-        <ul data-dc-tpl="368" class="ph-list"><li data-dc-tpl="369">Monitor and refine systems</li><li data-dc-tpl="370">Provide ongoing support</li><li data-dc-tpl="371">Address new needs</li><li data-dc-tpl="372">Ensure reliability and security</li></ul>
-        <div data-dc-tpl="373" class="ph-wk">Ongoing</div>
-      </div>
-      <div data-dc-tpl="374" class="ph">
-        <div data-dc-tpl="375" class="ph-num"><span data-dc-tpl="376">5</span></div>
-        <h3 data-dc-tpl="377" class="ph-h">Grow together</h3>
-        <ul data-dc-tpl="378" class="ph-list"><li data-dc-tpl="379">Support new clients</li><li data-dc-tpl="380">Expand capabilities</li><li data-dc-tpl="381">Adapt to new opportunities</li><li data-dc-tpl="382">Continue building a stronger, more independent business</li></ul>
-        <div data-dc-tpl="383" class="ph-wk">Always</div>
-      </div>
-    </div>
-    <div data-dc-tpl="384" class="callout rise" style="margin-top: auto;">
-      <p data-dc-tpl="385" class="co1">Pragmatic steps. <em data-dc-tpl="386" class="ta" style="font-style: normal;">Lasting results.</em></p>
-    </div>
-    
-    <div data-dc-tpl="388" class="foot"><span data-dc-tpl="389">Stronger solutions, safer tomorrows.</span></div>
-    
-  </section></div>
-<div class="frame"><section data-dc-tpl="390" class="slide content" data-label="06 · Our partnership" data-screen-label="06 06 · Our partnership" data-speaker-notes="Off the cuff: one Clydesdale pulls 8,000 lbs. You'd think two pull 16,000 — together they pull 32,000. That's what a team is." data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="5" style="padding-top: 156px;">
-        <div data-dc-tpl="391" class="head">
-      <div data-dc-tpl="392" class="kick"><span data-dc-tpl="393" class="kn">06</span><span data-dc-tpl="394" class="kb"></span><span data-dc-tpl="395" class="ks">Our partnership</span></div>
-      <div data-dc-tpl="396" class="brand"><svg data-dc-tpl="397" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="398" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="399" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="400" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="401">GUARD</b></div><div data-dc-tpl="402" class="vr" style="height: 40px;"></div><div data-dc-tpl="403" class="bp1">Keenan Miller × Joe CXO</div></div>
-    </div>
-    <div data-dc-tpl="404" class="duo">
-      <div data-dc-tpl="405" class="rise">
-        <h2 data-dc-tpl="406" class="duo-h">Keenan builds<br data-dc-tpl="407"><em data-dc-tpl="408" class="ta">the systems.</em></h2>
-        <div data-dc-tpl="409" class="triad">Technology · Execution · Local Presence</div>
-        <p data-dc-tpl="410" class="duo-p">I design, implement and support the technology that keeps your business secure, connected and running — so you can focus on what you do best.</p>
-        <div data-dc-tpl="411" class="srows">
-          <div data-dc-tpl="412" class="srow"><svg data-dc-tpl="413" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="414" width="18" height="12" x="3" y="4" rx="2" ry="2"></rect><line data-dc-tpl="415" x1="2" x2="22" y1="20" y2="20"></line></svg><div data-dc-tpl="416"><h4 data-dc-tpl="417">Technology strategy</h4><p data-dc-tpl="418">Recommend the right solutions for your goals</p></div></div>
-          <div data-dc-tpl="419" class="srow"><svg data-dc-tpl="420" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="421" x="16" y="16" width="6" height="6" rx="1"></rect><rect data-dc-tpl="422" x="2" y="16" width="6" height="6" rx="1"></rect><rect data-dc-tpl="423" x="9" y="2" width="6" height="6" rx="1"></rect><path data-dc-tpl="424" d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path data-dc-tpl="425" d="M12 12V8"></path></svg><div data-dc-tpl="426"><h4 data-dc-tpl="427">Systems &amp; infrastructure</h4><p data-dc-tpl="428">Networks, endpoints, cloud and connectivity</p></div></div>
-          <div data-dc-tpl="429" class="srow"><svg data-dc-tpl="430" class="ic" viewBox="0 0 24 24" aria-hidden="true"><ellipse data-dc-tpl="431" cx="12" cy="5" rx="9" ry="3"></ellipse><path data-dc-tpl="432" d="M3 5v14a9 3 0 0 0 18 0V5"></path><path data-dc-tpl="433" d="M3 12a9 3 0 0 0 18 0"></path></svg><div data-dc-tpl="434"><h4 data-dc-tpl="435">Cloud, data &amp; digital</h4><p data-dc-tpl="436">Microsoft 365, SharePoint, backup and file management</p></div></div>
-          <div data-dc-tpl="437" class="srow"><svg data-dc-tpl="438" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="439" d="m22 8-6 4 6 4V8Z"></path><rect data-dc-tpl="440" width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg><div data-dc-tpl="441"><h4 data-dc-tpl="442">Security operations technology</h4><p data-dc-tpl="443">Surveillance systems, access control and monitoring technology</p></div></div>
-          <div data-dc-tpl="444" class="srow"><svg data-dc-tpl="445" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="446" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg><div data-dc-tpl="447"><h4 data-dc-tpl="448">Project execution</h4><p data-dc-tpl="449">Plan, deploy, migrate and integrate systems</p></div></div>
-          <div data-dc-tpl="450" class="srow"><svg data-dc-tpl="451" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="452" d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg><div data-dc-tpl="453"><h4 data-dc-tpl="454">Local &amp; ongoing support</h4><p data-dc-tpl="455">Troubleshoot, maintain and evolve as your needs grow</p></div></div>
-        </div>
-      </div>
-      <div data-dc-tpl="456" class="duo-c rise">
-        <svg data-dc-tpl="457" width="98" height="110" viewBox="0 0 46 52" aria-hidden="true"><path data-dc-tpl="458" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2"></path><path data-dc-tpl="459" d="M23 10 34 14v9c0 8-5 13.5-11 16.5C17 36.5 12 31 12 23v-9Z" fill="#ff6a00" opacity="0.14"></path><path data-dc-tpl="460" d="M23 18v14M16 25h14" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round"></path></svg>
-        <div data-dc-tpl="461"><h3 data-dc-tpl="462">You get</h3><h3 data-dc-tpl="463" class="ta">a team.</h3></div>
-        <div data-dc-tpl="464" class="rule"></div>
-        <p data-dc-tpl="465" class="mid">A team doesn’t add.<br data-dc-tpl="466">It multiplies.</p>
-      </div>
-      <div data-dc-tpl="467" class="rise">
-        <h2 data-dc-tpl="468" class="duo-h">Joe helps determine <em data-dc-tpl="469" class="ta">what drives the business.</em></h2>
-        <div data-dc-tpl="470" class="triad">Operations · Strategy · Growth</div>
-        <p data-dc-tpl="471" class="duo-p">I bring a business and executive lens to make sure your technology investments align with your operations, finances and long-term goals — so you can grow with clarity and confidence.</p>
-        <div data-dc-tpl="472" class="srows">
-          <div data-dc-tpl="473" class="srow"><svg data-dc-tpl="474" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="475" width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path data-dc-tpl="476" d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path data-dc-tpl="477" d="M12 11h4"></path><path data-dc-tpl="478" d="M12 16h4"></path><path data-dc-tpl="479" d="M8 11h.01"></path><path data-dc-tpl="480" d="M8 16h.01"></path></svg><div data-dc-tpl="481"><h4 data-dc-tpl="482">Business structure</h4><p data-dc-tpl="483">Entity planning, compliance and documentation</p></div></div>
-          <div data-dc-tpl="484" class="srow"><svg data-dc-tpl="485" class="ic" viewBox="0 0 24 24" aria-hidden="true"><line data-dc-tpl="486" x1="21" x2="14" y1="4" y2="4"></line><line data-dc-tpl="487" x1="10" x2="3" y1="4" y2="4"></line><line data-dc-tpl="488" x1="21" x2="12" y1="12" y2="12"></line><line data-dc-tpl="489" x1="8" x2="3" y1="12" y2="12"></line><line data-dc-tpl="490" x1="21" x2="16" y1="20" y2="20"></line><line data-dc-tpl="491" x1="12" x2="3" y1="20" y2="20"></line></svg><div data-dc-tpl="492"><h4 data-dc-tpl="493">Operations &amp; process improvement</h4><p data-dc-tpl="494">Optimize workflows and organizational efficiency</p></div></div>
-          <div data-dc-tpl="495" class="srow"><svg data-dc-tpl="496" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="497" cx="12" cy="12" r="10"></circle><path data-dc-tpl="498" d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path data-dc-tpl="499" d="M12 18V6"></path></svg><div data-dc-tpl="500"><h4 data-dc-tpl="501">Financial &amp; cost efficiency</h4><p data-dc-tpl="502">Budgeting, vendor strategy and ROI planning</p></div></div>
-          <div data-dc-tpl="503" class="srow"><svg data-dc-tpl="504" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="505" d="M16 7h6v6"></path><path data-dc-tpl="506" d="m22 7-8.5 8.5-5-5L2 17"></path></svg><div data-dc-tpl="507"><h4 data-dc-tpl="508">Scalability</h4><p data-dc-tpl="509">You bring the growth — I chart the path to make it real</p></div></div>
-          <div data-dc-tpl="510" class="srow"><svg data-dc-tpl="511" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="512" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle data-dc-tpl="513" cx="9" cy="7" r="4"></circle><path data-dc-tpl="514" d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path data-dc-tpl="515" d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><div data-dc-tpl="516"><h4 data-dc-tpl="517">Partnership evaluation</h4><p data-dc-tpl="518">Assess and structure strategic relationships</p></div></div>
-          <div data-dc-tpl="519" class="srow"><svg data-dc-tpl="520" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="521" cx="12" cy="12" r="10"></circle><circle data-dc-tpl="522" cx="12" cy="12" r="6"></circle><circle data-dc-tpl="523" cx="12" cy="12" r="2"></circle></svg><div data-dc-tpl="524"><h4 data-dc-tpl="525">Executive strategy</h4><p data-dc-tpl="526">Turn vision into a practical, measurable roadmap</p></div></div>
         </div>
       </div>
     </div>
     
-    <div data-dc-tpl="528" class="foot"><span data-dc-tpl="529">Stronger solutions, safer tomorrows.</span></div>
+    <div data-dc-tpl="248" class="foot"><span data-dc-tpl="249">Stronger solutions, safer tomorrows.</span></div>
     
   </section></div>
-<div class="frame"><section data-dc-tpl="530" class="slide content" data-label="07 · Partnership options" data-screen-label="07 07 · Partnership options" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="6" data-deck-last-visible="" style="padding-top: 146px;">
-        <div data-dc-tpl="531" class="head">
-      <div data-dc-tpl="532" class="kick"><span data-dc-tpl="533" class="kn">07</span><span data-dc-tpl="534" class="kb"></span><span data-dc-tpl="535" class="ks">Partnership options</span></div>
-      <div data-dc-tpl="536" class="brand"><svg data-dc-tpl="537" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="538" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="539" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="540" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="541">GUARD</b></div><div data-dc-tpl="542" class="vr" style="height: 40px;"></div><div data-dc-tpl="543" class="bp1">Keenan Miller × Joe CXO</div></div>
+<div class="frame"><section data-dc-tpl="250" class="slide content" data-label="05 · The solution approach" data-screen-label="05 05 · The solution approach" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="4">
+        <div data-dc-tpl="251" class="ghost" aria-hidden="true">05</div>
+    <div data-dc-tpl="252" class="head">
+      <div data-dc-tpl="253" class="kick"><span data-dc-tpl="254" class="kn">05</span><span data-dc-tpl="255" class="kb"></span><span data-dc-tpl="256" class="ks">The solution approach</span></div>
+      <div data-dc-tpl="257" class="brand"><svg data-dc-tpl="258" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="259" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="260" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="261" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="262">GUARD</b></div><div data-dc-tpl="263" class="vr" style="height: 40px;"></div><div data-dc-tpl="264" class="bp1">Keenan Miller × Joe CXO</div></div>
     </div>
-    <div data-dc-tpl="544" style="display: grid; grid-template-columns: 1fr 560px; column-gap: 80px; align-items: end; position: relative; z-index: 2;">
-      <h2 data-dc-tpl="545" class="slide-title" style="font-size: 44px;">Three ways to move <em data-dc-tpl="546">forward.</em></h2>
-      <p data-dc-tpl="547" class="rise" style="font-size: 21.5px; line-height: 1.32; margin: 0px; color: var(--mut2);">Same goal. Different levels of involvement. Choose the partnership that fits where you are — and where you want to go.</p>
+    <h2 data-dc-tpl="265" class="slide-title">Integrated systems <em data-dc-tpl="266">for real-world impact.</em></h2>
+    <div data-dc-tpl="267" class="cols2 rise" style="margin-top: 48px;">
+      <p data-dc-tpl="268" class="lede" style="font-size: 23px;">We design and implement technology systems that connect your people, information and operations — so you can deliver security solutions more effectively, support new clients, and run a stronger, more independent business.</p>
+      <p data-dc-tpl="269" class="lede" style="font-size: 23px;">From surveillance and access-control systems to cloud infrastructure, communications and data management, we build the backbone that helps you operate, respond and grow.</p>
     </div>
-    <div data-dc-tpl="548" class="tiers rise" style="margin-top: 24px;">
-      <div data-dc-tpl="549" class="tcard ">
-        <div data-dc-tpl="550" class="t-kickrow"><span data-dc-tpl="551" class="t-kick">Tier 1</span></div>
-        <h3 data-dc-tpl="554" class="t-name">Support</h3>
-        <div data-dc-tpl="555" class="t-tag">Keep things running.</div>
-        <p data-dc-tpl="556" class="t-price">$2,000<span data-dc-tpl="557" class="t-per"> / month</span></p>
-        <span data-dc-tpl="558" class="btn btn-ghost">Choose Support</span>
-        <div data-dc-tpl="559" class="t-hr"></div>
-        <p data-dc-tpl="560" class="t-desc">Essential technology support when you need it. Stay secure, connected and productive without a long-term commitment.</p>
-        <ul data-dc-tpl="561" class="t-list" style="margin-top: 14px;">
-          <li data-dc-tpl="562"><svg data-dc-tpl="563" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="564" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="565">On-demand IT support</span></li>
-          <li data-dc-tpl="566"><svg data-dc-tpl="567" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="568" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="569">General technology guidance</span></li>
-          <li data-dc-tpl="570"><svg data-dc-tpl="571" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="572" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="573">Basic system maintenance</span></li>
-          <li data-dc-tpl="574"><svg data-dc-tpl="575" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="576" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="577">Vendor coordination (as needed)</span></li>
-          <li data-dc-tpl="578"><svg data-dc-tpl="579" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="580" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="581">Email &amp; remote support</span></li>
+    <div data-dc-tpl="270" class="cellrow idx rise" style="grid-template-columns: repeat(3, 1fr); row-gap: 42px; margin-top: 52px;">
+      <div data-dc-tpl="271" data-i="1">
+        <div data-dc-tpl="272" class="cell-h"><svg data-dc-tpl="273" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="274" d="m22 8-6 4 6 4V8Z"></path><rect data-dc-tpl="275" width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg>Surveillance &amp; monitoring systems</div>
+        <p data-dc-tpl="276" class="cell-b">Scalable camera systems, remote access and centralized monitoring</p>
+      </div>
+      <div data-dc-tpl="277" data-i="2">
+        <div data-dc-tpl="278" class="cell-h"><svg data-dc-tpl="279" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="280" width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path data-dc-tpl="281" d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Access control &amp; facility technology</div>
+        <p data-dc-tpl="282" class="cell-b">Secure facilities, manage access, improve visibility</p>
+      </div>
+      <div data-dc-tpl="283" data-i="3">
+        <div data-dc-tpl="284" class="cell-h"><svg data-dc-tpl="285" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="286" d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>Cloud &amp; data infrastructure</div>
+        <p data-dc-tpl="287" class="cell-b">Microsoft 365, SharePoint, secure file management and backup</p>
+      </div>
+      <div data-dc-tpl="288" data-i="4">
+        <div data-dc-tpl="289" class="cell-h"><svg data-dc-tpl="290" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="291" cx="12" cy="12" r="2"></circle><path data-dc-tpl="292" d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"></path><path data-dc-tpl="293" d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"></path><path data-dc-tpl="294" d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"></path><path data-dc-tpl="295" d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"></path></svg>Communications &amp; dispatch support</div>
+        <p data-dc-tpl="296" class="cell-b">Systems that keep teams connected and coordinated</p>
+      </div>
+      <div data-dc-tpl="297" data-i="5">
+        <div data-dc-tpl="298" class="cell-h"><svg data-dc-tpl="299" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="300" width="20" height="14" x="2" y="3" rx="2"></rect><line data-dc-tpl="301" x1="8" x2="16" y1="21" y2="21"></line><line data-dc-tpl="302" x1="12" x2="12" y1="17" y2="21"></line></svg>Client &amp; operational platforms</div>
+        <p data-dc-tpl="303" class="cell-b">Websites, client portals and business tools</p>
+      </div>
+      <div data-dc-tpl="304" data-i="6">
+        <div data-dc-tpl="305" class="cell-h"><svg data-dc-tpl="306" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="307" d="M12 22v-5"></path><path data-dc-tpl="308" d="M9 8V2"></path><path data-dc-tpl="309" d="M15 8V2"></path><path data-dc-tpl="310" d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"></path></svg>Vendor &amp; device integration</div>
+        <p data-dc-tpl="311" class="cell-b">Equipment, licensing and ongoing support</p>
+      </div>
+    </div>
+    <div data-dc-tpl="312" class="callout rise" style="margin-top: auto;">
+      <p data-dc-tpl="313" class="co1">All the pieces working together.</p>
+      <p data-dc-tpl="314" class="co2">So you can focus on what matters most.</p>
+    </div>
+    
+    <div data-dc-tpl="316" class="foot"><span data-dc-tpl="317">Stronger solutions, safer tomorrows.</span></div>
+    
+  </section></div>
+<div class="frame"><section data-dc-tpl="318" class="slide content" data-label="06 · The path forward" data-screen-label="06 06 · The path forward" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="5">
+        <div data-dc-tpl="319" class="ghost" aria-hidden="true">06</div>
+    <div data-dc-tpl="320" class="head">
+      <div data-dc-tpl="321" class="kick"><span data-dc-tpl="322" class="kn">06</span><span data-dc-tpl="323" class="kb"></span><span data-dc-tpl="324" class="ks">The path forward</span></div>
+      <div data-dc-tpl="325" class="brand"><svg data-dc-tpl="326" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="327" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="328" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="329" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="330">GUARD</b></div><div data-dc-tpl="331" class="vr" style="height: 40px;"></div><div data-dc-tpl="332" class="bp1">Keenan Miller × Joe CXO</div></div>
+    </div>
+    <h2 data-dc-tpl="333" class="slide-title">A clear roadmap <em data-dc-tpl="334">from vision to reality.</em></h2>
+    <div data-dc-tpl="335" class="cols2 rise" style="margin-top: 48px;">
+      <p data-dc-tpl="336" class="lede" style="font-size: 23px;">We take a practical, phased approach to design and implement the systems your business needs — so you can keep moving forward while we build for what’s next.</p>
+      <p data-dc-tpl="337" class="lede" style="font-size: 23px;">From assessing your current environment to full implementation and ongoing support, we focus on real solutions, measurable progress and long-term impact.</p>
+    </div>
+    <div data-dc-tpl="338" class="phases rise" style="margin-top: 52px;">
+      <div data-dc-tpl="339" class="ph">
+        <div data-dc-tpl="340" class="ph-num ph-num-hi"><span data-dc-tpl="341">1</span></div>
+        <h3 data-dc-tpl="342" class="ph-h">Discover &amp; align</h3>
+        <ul data-dc-tpl="343" class="ph-list"><li data-dc-tpl="344">Understand your goals</li><li data-dc-tpl="345">Assess current systems</li><li data-dc-tpl="346">Identify priorities and quick wins</li></ul>
+        <div data-dc-tpl="347" class="ph-wk">Weeks 1–2</div>
+      </div>
+      <div data-dc-tpl="348" class="ph">
+        <div data-dc-tpl="349" class="ph-num"><span data-dc-tpl="350">2</span></div>
+        <h3 data-dc-tpl="351" class="ph-h">Plan &amp; design</h3>
+        <ul data-dc-tpl="352" class="ph-list"><li data-dc-tpl="353">Develop solution architecture</li><li data-dc-tpl="354">Define scopes &amp; timelines</li><li data-dc-tpl="355">Align with business and client needs</li></ul>
+        <div data-dc-tpl="356" class="ph-wk">Weeks 3–6</div>
+      </div>
+      <div data-dc-tpl="357" class="ph">
+        <div data-dc-tpl="358" class="ph-num"><span data-dc-tpl="359">3</span></div>
+        <h3 data-dc-tpl="360" class="ph-h">Implement &amp; transition</h3>
+        <ul data-dc-tpl="361" class="ph-list"><li data-dc-tpl="362">Deploy systems</li><li data-dc-tpl="363">Migrate and secure data</li><li data-dc-tpl="364">Configure infrastructure</li><li data-dc-tpl="365">Train and support your team</li></ul>
+        <div data-dc-tpl="366" class="ph-wk">Weeks 8–12+</div>
+      </div>
+      <div data-dc-tpl="367" class="ph">
+        <div data-dc-tpl="368" class="ph-num"><span data-dc-tpl="369">4</span></div>
+        <h3 data-dc-tpl="370" class="ph-h">Optimize &amp; support</h3>
+        <ul data-dc-tpl="371" class="ph-list"><li data-dc-tpl="372">Monitor and refine systems</li><li data-dc-tpl="373">Provide ongoing support</li><li data-dc-tpl="374">Address new needs</li><li data-dc-tpl="375">Ensure reliability and security</li></ul>
+        <div data-dc-tpl="376" class="ph-wk">Ongoing</div>
+      </div>
+      <div data-dc-tpl="377" class="ph">
+        <div data-dc-tpl="378" class="ph-num"><span data-dc-tpl="379">5</span></div>
+        <h3 data-dc-tpl="380" class="ph-h">Grow together</h3>
+        <ul data-dc-tpl="381" class="ph-list"><li data-dc-tpl="382">Support new clients</li><li data-dc-tpl="383">Expand capabilities</li><li data-dc-tpl="384">Adapt to new opportunities</li><li data-dc-tpl="385">Continue building a stronger, more independent business</li></ul>
+        <div data-dc-tpl="386" class="ph-wk">Always</div>
+      </div>
+    </div>
+    <div data-dc-tpl="387" class="callout rise" style="margin-top: auto;">
+      <p data-dc-tpl="388" class="co1">Pragmatic steps. <em data-dc-tpl="389" class="ta" style="font-style: normal;">Lasting results.</em></p>
+    </div>
+    
+    <div data-dc-tpl="391" class="foot"><span data-dc-tpl="392">Stronger solutions, safer tomorrows.</span></div>
+    
+  </section></div>
+<div class="frame"><section data-dc-tpl="393" class="slide content" data-label="07 · The team" data-screen-label="07 07 · The team" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="6" style="padding-top: 156px; padding-bottom: 140px;">
+        <div data-dc-tpl="394" class="head">
+      <div data-dc-tpl="395" class="kick"><span data-dc-tpl="396" class="kn">07</span><span data-dc-tpl="397" class="kb"></span><span data-dc-tpl="398" class="ks">The team</span></div>
+      <div data-dc-tpl="399" class="brand"><svg data-dc-tpl="400" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="401" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="402" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="403" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="404">GUARD</b></div><div data-dc-tpl="405" class="vr" style="height: 40px;"></div><div data-dc-tpl="406" class="bp1">Keenan Miller × Joe CXO</div></div>
+    </div>
+    <div data-dc-tpl="407" class="intro rise">
+      <div data-dc-tpl="408">
+        <h2 data-dc-tpl="409" class="in-name">KEENAN</h2>
+        <div data-dc-tpl="410" class="in-sub">Today in focus.</div>
+        <div data-dc-tpl="411" class="in-rule"></div>
+        <div data-dc-tpl="412" style="display: flex; flex-direction: column; gap: 30px; margin-top: 40px;">
+          <div data-dc-tpl="413" class="in-item"><h4 data-dc-tpl="414">Day-to-day operations</h4><p data-dc-tpl="415">Keep systems running.</p></div>
+          <div data-dc-tpl="416" class="in-item"><h4 data-dc-tpl="417">Technology execution</h4><p data-dc-tpl="418">Implement, maintain, solve.</p></div>
+          <div data-dc-tpl="419" class="in-item"><h4 data-dc-tpl="420">On-island. On call.</h4><p data-dc-tpl="421">Local presence when it matters.</p></div>
+        </div>
+      </div>
+      <figure data-dc-tpl="422" class="plate" style="position: relative; margin: 0px;">
+        <img data-dc-tpl="423" src="assets/duo-keenan.png" alt="Keenan Miller">
+        <div data-dc-tpl="424" class="scan"></div><div data-dc-tpl="425" class="shade"></div>
+        <div data-dc-tpl="426" class="vf vf-tl" style="width: 26px; height: 26px;"></div><div data-dc-tpl="427" class="vf vf-br" style="width: 26px; height: 26px;"></div>
+        <div data-dc-tpl="428" class="cam-cap"><span data-dc-tpl="429">KEENAN MILLER</span></div>
+      </figure>
+      <div data-dc-tpl="430" class="in-mid">
+        <div data-dc-tpl="431" class="vline"></div>
+        <div data-dc-tpl="432"><div data-dc-tpl="433" class="seas">SEASONED</div><div data-dc-tpl="434" class="seas" style="color: var(--org);">COHESION</div></div>
+        <div data-dc-tpl="435" style="width: 44px; height: 3px; background: var(--org);"></div>
+        <div data-dc-tpl="436" class="vline"></div>
+      </div>
+      <figure data-dc-tpl="437" class="plate" style="position: relative; margin: 0px;">
+        <img data-dc-tpl="438" src="assets/duo-joe.png" alt="Joe">
+        <div data-dc-tpl="439" class="scan"></div><div data-dc-tpl="440" class="shade"></div>
+        <div data-dc-tpl="441" class="vf vf-tl" style="width: 26px; height: 26px;"></div><div data-dc-tpl="442" class="vf vf-br" style="width: 26px; height: 26px;"></div>
+        <div data-dc-tpl="443" class="cam-cap"><span data-dc-tpl="444">JOE CXO</span></div>
+      </figure>
+      <div data-dc-tpl="445">
+        <h2 data-dc-tpl="446" class="in-name">JOE</h2>
+        <div data-dc-tpl="447" class="in-sub">Tomorrow in sight.</div>
+        <div data-dc-tpl="448" class="in-rule"></div>
+        <div data-dc-tpl="449" style="display: flex; flex-direction: column; gap: 30px; margin-top: 40px;">
+          <div data-dc-tpl="450" class="in-item"><h4 data-dc-tpl="451">Roadmap &amp; project management</h4><p data-dc-tpl="452">Plans, prioritizes, keeps us on course.</p></div>
+          <div data-dc-tpl="453" class="in-item"><h4 data-dc-tpl="454">Business strategy</h4><p data-dc-tpl="455">Identifies opportunities, drives growth.</p></div>
+          <div data-dc-tpl="456" class="in-item"><h4 data-dc-tpl="457">Big picture perspective</h4><p data-dc-tpl="458">Looks beyond the immediate need.</p></div>
+        </div>
+      </div>
+    </div>
+    <div data-dc-tpl="459" class="built rise"><div data-dc-tpl="460" class="bl"></div><span data-dc-tpl="461">Technology <em data-dc-tpl="462" class="ta" style="font-style: normal;">built right</em> · Business <em data-dc-tpl="463" class="ta" style="font-style: normal;">built forward</em></span><div data-dc-tpl="464" class="bl"></div></div>
+    
+    <div data-dc-tpl="466" class="foot"><span data-dc-tpl="467">Stronger solutions, safer tomorrows.</span></div>
+    
+  </section></div>
+<div class="frame"><section data-dc-tpl="468" class="slide content" data-label="08 · Our partnership" data-screen-label="08 08 · Our partnership" data-speaker-notes="Off the cuff: one Clydesdale pulls 8,000 lbs. You'd think two pull 16,000 — together they pull 32,000. That's what a team is." data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="7" style="padding-top: 156px;">
+        <div data-dc-tpl="469" class="head">
+      <div data-dc-tpl="470" class="kick"><span data-dc-tpl="471" class="kn">08</span><span data-dc-tpl="472" class="kb"></span><span data-dc-tpl="473" class="ks">Our partnership</span></div>
+      <div data-dc-tpl="474" class="brand"><svg data-dc-tpl="475" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="476" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="477" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="478" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="479">GUARD</b></div><div data-dc-tpl="480" class="vr" style="height: 40px;"></div><div data-dc-tpl="481" class="bp1">Keenan Miller × Joe CXO</div></div>
+    </div>
+    <div data-dc-tpl="482" class="duo">
+      <div data-dc-tpl="483" class="rise">
+        <h2 data-dc-tpl="484" class="duo-h">Keenan builds<br data-dc-tpl="485"><em data-dc-tpl="486" class="ta">the systems.</em></h2>
+        <div data-dc-tpl="487" class="triad">Technology · Execution · Local Presence</div>
+        <p data-dc-tpl="488" class="duo-p">I design, implement and support the technology that keeps your business secure, connected and running — so you can focus on what you do best.</p>
+        <div data-dc-tpl="489" class="srows">
+          <div data-dc-tpl="490" class="srow"><svg data-dc-tpl="491" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="492" width="18" height="12" x="3" y="4" rx="2" ry="2"></rect><line data-dc-tpl="493" x1="2" x2="22" y1="20" y2="20"></line></svg><div data-dc-tpl="494"><h4 data-dc-tpl="495">Technology strategy</h4><p data-dc-tpl="496">Recommend the right solutions for your goals</p></div></div>
+          <div data-dc-tpl="497" class="srow"><svg data-dc-tpl="498" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="499" x="16" y="16" width="6" height="6" rx="1"></rect><rect data-dc-tpl="500" x="2" y="16" width="6" height="6" rx="1"></rect><rect data-dc-tpl="501" x="9" y="2" width="6" height="6" rx="1"></rect><path data-dc-tpl="502" d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"></path><path data-dc-tpl="503" d="M12 12V8"></path></svg><div data-dc-tpl="504"><h4 data-dc-tpl="505">Systems &amp; infrastructure</h4><p data-dc-tpl="506">Networks, endpoints, cloud and connectivity</p></div></div>
+          <div data-dc-tpl="507" class="srow"><svg data-dc-tpl="508" class="ic" viewBox="0 0 24 24" aria-hidden="true"><ellipse data-dc-tpl="509" cx="12" cy="5" rx="9" ry="3"></ellipse><path data-dc-tpl="510" d="M3 5v14a9 3 0 0 0 18 0V5"></path><path data-dc-tpl="511" d="M3 12a9 3 0 0 0 18 0"></path></svg><div data-dc-tpl="512"><h4 data-dc-tpl="513">Cloud, data &amp; digital</h4><p data-dc-tpl="514">Microsoft 365, SharePoint, backup and file management</p></div></div>
+          <div data-dc-tpl="515" class="srow"><svg data-dc-tpl="516" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="517" d="m22 8-6 4 6 4V8Z"></path><rect data-dc-tpl="518" width="14" height="12" x="2" y="6" rx="2" ry="2"></rect></svg><div data-dc-tpl="519"><h4 data-dc-tpl="520">Security operations technology</h4><p data-dc-tpl="521">Surveillance systems, access control and monitoring technology</p></div></div>
+          <div data-dc-tpl="522" class="srow"><svg data-dc-tpl="523" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="524" d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg><div data-dc-tpl="525"><h4 data-dc-tpl="526">Project execution</h4><p data-dc-tpl="527">Plan, deploy, migrate and integrate systems</p></div></div>
+          <div data-dc-tpl="528" class="srow"><svg data-dc-tpl="529" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="530" d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg><div data-dc-tpl="531"><h4 data-dc-tpl="532">Local &amp; ongoing support</h4><p data-dc-tpl="533">Troubleshoot, maintain and evolve as your needs grow</p></div></div>
+        </div>
+      </div>
+      <div data-dc-tpl="534" class="duo-c rise">
+        <svg data-dc-tpl="535" width="98" height="110" viewBox="0 0 46 52" aria-hidden="true"><path data-dc-tpl="536" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2"></path><path data-dc-tpl="537" d="M23 10 34 14v9c0 8-5 13.5-11 16.5C17 36.5 12 31 12 23v-9Z" fill="#ff6a00" opacity="0.14"></path><path data-dc-tpl="538" d="M23 18v14M16 25h14" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round"></path></svg>
+        <div data-dc-tpl="539"><h3 data-dc-tpl="540">You get</h3><h3 data-dc-tpl="541" class="ta">a team.</h3></div>
+        <div data-dc-tpl="542" class="rule"></div>
+        <p data-dc-tpl="543" class="mid">A team doesn’t add.<br data-dc-tpl="544">It multiplies.</p>
+      </div>
+      <div data-dc-tpl="545" class="rise">
+        <h2 data-dc-tpl="546" class="duo-h">Joe helps determine <em data-dc-tpl="547" class="ta">what drives the business.</em></h2>
+        <div data-dc-tpl="548" class="triad">Operations · Strategy · Growth</div>
+        <p data-dc-tpl="549" class="duo-p">I bring a business and executive lens to make sure your technology investments align with your operations, finances and long-term goals — so you can grow with clarity and confidence.</p>
+        <div data-dc-tpl="550" class="srows">
+          <div data-dc-tpl="551" class="srow"><svg data-dc-tpl="552" class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect data-dc-tpl="553" width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path data-dc-tpl="554" d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path data-dc-tpl="555" d="M12 11h4"></path><path data-dc-tpl="556" d="M12 16h4"></path><path data-dc-tpl="557" d="M8 11h.01"></path><path data-dc-tpl="558" d="M8 16h.01"></path></svg><div data-dc-tpl="559"><h4 data-dc-tpl="560">Business structure</h4><p data-dc-tpl="561">Entity planning, compliance and documentation</p></div></div>
+          <div data-dc-tpl="562" class="srow"><svg data-dc-tpl="563" class="ic" viewBox="0 0 24 24" aria-hidden="true"><line data-dc-tpl="564" x1="21" x2="14" y1="4" y2="4"></line><line data-dc-tpl="565" x1="10" x2="3" y1="4" y2="4"></line><line data-dc-tpl="566" x1="21" x2="12" y1="12" y2="12"></line><line data-dc-tpl="567" x1="8" x2="3" y1="12" y2="12"></line><line data-dc-tpl="568" x1="21" x2="16" y1="20" y2="20"></line><line data-dc-tpl="569" x1="12" x2="3" y1="20" y2="20"></line></svg><div data-dc-tpl="570"><h4 data-dc-tpl="571">Operations &amp; process improvement</h4><p data-dc-tpl="572">Optimize workflows and organizational efficiency</p></div></div>
+          <div data-dc-tpl="573" class="srow"><svg data-dc-tpl="574" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="575" cx="12" cy="12" r="10"></circle><path data-dc-tpl="576" d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path data-dc-tpl="577" d="M12 18V6"></path></svg><div data-dc-tpl="578"><h4 data-dc-tpl="579">Financial &amp; cost efficiency</h4><p data-dc-tpl="580">Budgeting, vendor strategy and ROI planning</p></div></div>
+          <div data-dc-tpl="581" class="srow"><svg data-dc-tpl="582" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="583" d="M16 7h6v6"></path><path data-dc-tpl="584" d="m22 7-8.5 8.5-5-5L2 17"></path></svg><div data-dc-tpl="585"><h4 data-dc-tpl="586">Scalability</h4><p data-dc-tpl="587">You bring the growth — I chart the path to make it real</p></div></div>
+          <div data-dc-tpl="588" class="srow"><svg data-dc-tpl="589" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="590" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle data-dc-tpl="591" cx="9" cy="7" r="4"></circle><path data-dc-tpl="592" d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path data-dc-tpl="593" d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><div data-dc-tpl="594"><h4 data-dc-tpl="595">Partnership evaluation</h4><p data-dc-tpl="596">Assess and structure strategic relationships</p></div></div>
+          <div data-dc-tpl="597" class="srow"><svg data-dc-tpl="598" class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle data-dc-tpl="599" cx="12" cy="12" r="10"></circle><circle data-dc-tpl="600" cx="12" cy="12" r="6"></circle><circle data-dc-tpl="601" cx="12" cy="12" r="2"></circle></svg><div data-dc-tpl="602"><h4 data-dc-tpl="603">Executive strategy</h4><p data-dc-tpl="604">Turn vision into a practical, measurable roadmap</p></div></div>
+        </div>
+      </div>
+    </div>
+    
+    <div data-dc-tpl="606" class="foot"><span data-dc-tpl="607">Stronger solutions, safer tomorrows.</span></div>
+    
+  </section></div>
+<div class="frame"><section data-dc-tpl="608" class="slide content" data-label="09 · The first 90 days" data-screen-label="09 09 · The first 90 days" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="8" style="padding-right: 620px;">
+        <figure data-dc-tpl="609" class="plate" style="top: 0px; right: 0px; bottom: 0px; width: 540px; margin: 0px; clip-path: polygon(120px 0px, 100% 0px, 100% 100%, 0px 100%);">
+      <img data-dc-tpl="610" src="assets/hawaii-tower.png" alt="Waikiki and Diamond Head at dusk">
+      <div data-dc-tpl="611" class="scan"></div><div data-dc-tpl="612" class="shade"></div>
+      <div data-dc-tpl="613" class="vf vf-tr"></div><div data-dc-tpl="614" class="vf vf-br"></div>
+      <div data-dc-tpl="615" class="rec" style="left: auto; right: 76px;"><i data-dc-tpl="616"></i>REC</div>
+      <div data-dc-tpl="617" class="cam-cap" style="left: 160px;"><span data-dc-tpl="618">CAM 09 — WAIKIKI</span></div>
+    </figure>
+    <div data-dc-tpl="619" style="position: absolute; top: -26px; bottom: -26px; right: 494px; width: 4px; background: var(--org); transform: rotate(6.9deg); z-index: 2;"></div>
+    <div data-dc-tpl="620" class="head" style="right: 640px;">
+      <div data-dc-tpl="621" class="kick"><span data-dc-tpl="622" class="kn">09</span><span data-dc-tpl="623" class="kb"></span><span data-dc-tpl="624" class="ks">The initial partnership</span></div>
+    </div>
+    <h2 data-dc-tpl="625" class="slide-title">Your first <em data-dc-tpl="626">90 days.</em></h2>
+    <p data-dc-tpl="627" class="rise" style="margin: 44px 0px 0px; font-family: Orbitron, sans-serif; font-weight: 700; font-size: 27px; letter-spacing: 0.06em; color: var(--mut2);">October 1 – December 31, 2026</p>
+    <div data-dc-tpl="628" class="tl rise" style="margin-top: 56px;">
+      <div data-dc-tpl="629"><div data-dc-tpl="630" class="tl-dot"></div><div data-dc-tpl="631" class="tl-mon">October</div><div data-dc-tpl="632" class="tl-ph">Discover &amp; stabilize</div>
+        <ul data-dc-tpl="633" class="ph-list" style="margin-top: 16px;"><li data-dc-tpl="634">Map systems and priorities</li><li data-dc-tpl="635">Address urgent support needs</li><li data-dc-tpl="636">Plan the technology separation</li></ul></div>
+      <div data-dc-tpl="637"><div data-dc-tpl="638" class="tl-dot"></div><div data-dc-tpl="639" class="tl-mon">November</div><div data-dc-tpl="640" class="tl-ph">Build &amp; transition</div>
+        <ul data-dc-tpl="641" class="ph-list" style="margin-top: 16px;"><li data-dc-tpl="642">Execute priority migrations</li><li data-dc-tpl="643">Connect infrastructure and systems</li><li data-dc-tpl="644">Coordinate vendors and rollout</li></ul></div>
+      <div data-dc-tpl="645"><div data-dc-tpl="646" class="tl-dot"></div><div data-dc-tpl="647" class="tl-mon">December</div><div data-dc-tpl="648" class="tl-ph">Optimize &amp; plan</div>
+        <ul data-dc-tpl="649" class="ph-list" style="margin-top: 16px;"><li data-dc-tpl="650">Refine and document systems</li><li data-dc-tpl="651">Review workload and value delivered</li><li data-dc-tpl="652">Agree on the next stage</li></ul></div>
+    </div>
+    <p data-dc-tpl="653" class="rise" style="margin-top: auto; margin-bottom: 0px; font-size: 21px; color: var(--mut);">Optional prorated September start by mutual agreement.</p>
+    
+    <div data-dc-tpl="655" class="foot" style="right: 640px;"><span data-dc-tpl="656">Stronger solutions, safer tomorrows.</span></div>
+    
+  </section></div>
+<div class="frame"><section data-dc-tpl="657" class="slide content" data-label="10 · Partnership options" data-screen-label="10 10 · Partnership options" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="9" style="padding-top: 146px;">
+        <div data-dc-tpl="658" class="head">
+      <div data-dc-tpl="659" class="kick"><span data-dc-tpl="660" class="kn">10</span><span data-dc-tpl="661" class="kb"></span><span data-dc-tpl="662" class="ks">Partnership options</span></div>
+      <div data-dc-tpl="663" class="brand"><svg data-dc-tpl="664" class="shield" viewBox="0 0 46 52" aria-hidden="true" style="width: 34px; height: 38px;"><path data-dc-tpl="665" d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"></path><path data-dc-tpl="666" d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div data-dc-tpl="667" class="bm1" style="font-size: 22px;">EVER<b data-dc-tpl="668">GUARD</b></div><div data-dc-tpl="669" class="vr" style="height: 40px;"></div><div data-dc-tpl="670" class="bp1">Keenan Miller × Joe CXO</div></div>
+    </div>
+    <div data-dc-tpl="671" style="display: grid; grid-template-columns: 1fr 560px; column-gap: 80px; align-items: end; position: relative; z-index: 2;">
+      <h2 data-dc-tpl="672" class="slide-title" style="font-size: 44px;">Three ways to move <em data-dc-tpl="673">forward.</em></h2>
+      <p data-dc-tpl="674" class="rise" style="font-size: 21.5px; line-height: 1.32; margin: 0px; color: var(--mut2);">Same goal. Different levels of involvement. Choose the partnership that fits where you are — and where you want to go.</p>
+    </div>
+    <div data-dc-tpl="675" class="tiers rise" style="margin-top: 24px;">
+      <div data-dc-tpl="676" class="tcard ">
+        <div data-dc-tpl="677" class="t-kickrow"><span data-dc-tpl="678" class="t-kick">Tier 1</span></div>
+        <h3 data-dc-tpl="681" class="t-name">Support</h3>
+        <div data-dc-tpl="682" class="t-tag">Keep things running.</div>
+        <p data-dc-tpl="683" class="t-price">$2,000<span data-dc-tpl="684" class="t-per"> / month</span></p>
+        <span data-dc-tpl="685" class="btn btn-ghost">Choose Support</span>
+        <div data-dc-tpl="686" class="t-hr"></div>
+        <p data-dc-tpl="687" class="t-desc">Essential technology support when you need it. Stay secure, connected and productive without a long-term commitment.</p>
+        <ul data-dc-tpl="688" class="t-list" style="margin-top: 14px;">
+          <li data-dc-tpl="689"><svg data-dc-tpl="690" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="691" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="692">On-demand IT support</span></li>
+          <li data-dc-tpl="693"><svg data-dc-tpl="694" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="695" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="696">General technology guidance</span></li>
+          <li data-dc-tpl="697"><svg data-dc-tpl="698" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="699" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="700">Basic system maintenance</span></li>
+          <li data-dc-tpl="701"><svg data-dc-tpl="702" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="703" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="704">Vendor coordination (as needed)</span></li>
+          <li data-dc-tpl="705"><svg data-dc-tpl="706" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="707" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="708">Email &amp; remote support</span></li>
         </ul>
-        <p data-dc-tpl="582" class="t-ideal">Ideal for: staying supported while you handle day-to-day operations</p>
+        <p data-dc-tpl="709" class="t-ideal">Ideal for: staying supported while you handle day-to-day operations</p>
       </div>
-      <div data-dc-tpl="583" class="tcard ">
-        <div data-dc-tpl="584" class="t-kickrow"><span data-dc-tpl="585" class="t-kick">Tier 2</span></div>
-        <h3 data-dc-tpl="588" class="t-name">Ownership</h3>
-        <div data-dc-tpl="589" class="t-tag">Taking it further.</div>
-        <p data-dc-tpl="590" class="t-price">$5,500<span data-dc-tpl="591" class="t-per"> / month</span></p>
-        <span data-dc-tpl="592" class="btn btn-ghost">Choose Ownership</span>
-        <div data-dc-tpl="593" class="t-hr"></div>
-        <p data-dc-tpl="594" class="t-desc">Proactively manage and improve your technology environment. We take ownership of the systems so you can focus on your clients and your business.</p>
-        <ul data-dc-tpl="595" class="t-list" style="margin-top: 14px;">
-          <li data-dc-tpl="596"><svg data-dc-tpl="597" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="598" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="599">Everything in Support, plus:</span></li>
-          <li data-dc-tpl="600"><svg data-dc-tpl="601" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="602" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="603">Proactive system management</span></li>
-          <li data-dc-tpl="604"><svg data-dc-tpl="605" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="606" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="607">Microsoft 365 &amp; cloud administration</span></li>
-          <li data-dc-tpl="608"><svg data-dc-tpl="609" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="610" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="611">Security oversight and monitoring</span></li>
-          <li data-dc-tpl="612"><svg data-dc-tpl="613" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="614" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="615">Website and digital tools support</span></li>
-          <li data-dc-tpl="616"><svg data-dc-tpl="617" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="618" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="619">Process improvement recommendations</span></li>
-          <li data-dc-tpl="620"><svg data-dc-tpl="621" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="622" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="623">Regular strategy check-ins</span></li>
+      <div data-dc-tpl="710" class="tcard ">
+        <div data-dc-tpl="711" class="t-kickrow"><span data-dc-tpl="712" class="t-kick">Tier 2</span></div>
+        <h3 data-dc-tpl="715" class="t-name">Ownership</h3>
+        <div data-dc-tpl="716" class="t-tag">Taking it further.</div>
+        <p data-dc-tpl="717" class="t-price">$5,500<span data-dc-tpl="718" class="t-per"> / month</span></p>
+        <span data-dc-tpl="719" class="btn btn-ghost">Choose Ownership</span>
+        <div data-dc-tpl="720" class="t-hr"></div>
+        <p data-dc-tpl="721" class="t-desc">Proactively manage and improve your technology environment. We take ownership of the systems so you can focus on your clients and your business.</p>
+        <ul data-dc-tpl="722" class="t-list" style="margin-top: 14px;">
+          <li data-dc-tpl="723"><svg data-dc-tpl="724" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="725" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="726">Everything in Support, plus:</span></li>
+          <li data-dc-tpl="727"><svg data-dc-tpl="728" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="729" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="730">Proactive system management</span></li>
+          <li data-dc-tpl="731"><svg data-dc-tpl="732" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="733" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="734">Microsoft 365 &amp; cloud administration</span></li>
+          <li data-dc-tpl="735"><svg data-dc-tpl="736" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="737" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="738">Security oversight and monitoring</span></li>
+          <li data-dc-tpl="739"><svg data-dc-tpl="740" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="741" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="742">Website and digital tools support</span></li>
+          <li data-dc-tpl="743"><svg data-dc-tpl="744" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="745" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="746">Process improvement recommendations</span></li>
+          <li data-dc-tpl="747"><svg data-dc-tpl="748" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="749" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="750">Regular strategy check-ins</span></li>
         </ul>
-        <p data-dc-tpl="624" class="t-ideal">Ideal for: businesses ready to hand off technology management</p>
+        <p data-dc-tpl="751" class="t-ideal">Ideal for: businesses ready to hand off technology management</p>
       </div>
-      <div data-dc-tpl="625" class="tcard tcard-rec">
-        <div data-dc-tpl="626" class="t-kickrow"><span data-dc-tpl="627" class="t-kick">Tier 3</span><span data-dc-tpl="629" class="tag-rec">Recommended</span></div>
-        <h3 data-dc-tpl="630" class="t-name">Transformation</h3>
-        <div data-dc-tpl="631" class="t-tag">Built for what’s next.</div>
-        <p data-dc-tpl="632" class="t-price">$10,000<span data-dc-tpl="633" class="t-per"> / month</span></p>
-        <span data-dc-tpl="634" class="btn">Choose Transformation</span>
-        <div data-dc-tpl="635" class="t-hr"></div>
-        <p data-dc-tpl="636" class="t-desc">A complete partnership to align your technology, operations and business structure for long-term growth. We bring the strategy and execution to help you scale with confidence.</p>
-        <ul data-dc-tpl="637" class="t-list" style="margin-top: 14px;">
-          <li data-dc-tpl="638"><svg data-dc-tpl="639" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="640" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="641">Everything in Ownership, plus:</span></li>
-          <li data-dc-tpl="642"><svg data-dc-tpl="643" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="644" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="645">Executive strategy and advisory</span></li>
-          <li data-dc-tpl="646"><svg data-dc-tpl="647" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="648" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="649">Business operations and process optimization</span></li>
-          <li data-dc-tpl="650"><svg data-dc-tpl="651" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="652" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="653">Financial structure and cost efficiency</span></li>
-          <li data-dc-tpl="654"><svg data-dc-tpl="655" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="656" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="657">Entity planning and compliance support</span></li>
-          <li data-dc-tpl="658"><svg data-dc-tpl="659" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="660" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="661">Growth planning and new opportunities</span></li>
-          <li data-dc-tpl="662"><svg data-dc-tpl="663" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="664" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="665">Ongoing partnership with Keenan + Joe</span></li>
+      <div data-dc-tpl="752" class="tcard tcard-rec">
+        <div data-dc-tpl="753" class="t-kickrow"><span data-dc-tpl="754" class="t-kick">Tier 3</span><span data-dc-tpl="756" class="tag-rec">Recommended</span></div>
+        <h3 data-dc-tpl="757" class="t-name">Transformation</h3>
+        <div data-dc-tpl="758" class="t-tag">Built for what’s next.</div>
+        <p data-dc-tpl="759" class="t-price">$10,000<span data-dc-tpl="760" class="t-per"> / month</span></p>
+        <span data-dc-tpl="761" class="btn">Choose Transformation</span>
+        <div data-dc-tpl="762" class="t-hr"></div>
+        <p data-dc-tpl="763" class="t-desc">A complete partnership to align your technology, operations and business structure for long-term growth. We bring the strategy and execution to help you scale with confidence.</p>
+        <ul data-dc-tpl="764" class="t-list" style="margin-top: 14px;">
+          <li data-dc-tpl="765"><svg data-dc-tpl="766" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="767" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="768">Everything in Ownership, plus:</span></li>
+          <li data-dc-tpl="769"><svg data-dc-tpl="770" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="771" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="772">Executive strategy and advisory</span></li>
+          <li data-dc-tpl="773"><svg data-dc-tpl="774" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="775" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="776">Business operations and process optimization</span></li>
+          <li data-dc-tpl="777"><svg data-dc-tpl="778" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="779" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="780">Financial structure and cost efficiency</span></li>
+          <li data-dc-tpl="781"><svg data-dc-tpl="782" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="783" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="784">Entity planning and compliance support</span></li>
+          <li data-dc-tpl="785"><svg data-dc-tpl="786" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="787" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="788">Growth planning and new opportunities</span></li>
+          <li data-dc-tpl="789"><svg data-dc-tpl="790" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="791" d="M20 6 9 17l-5-5"></path></svg><span data-dc-tpl="792">Ongoing partnership with Keenan + Joe</span></li>
         </ul>
-        <p data-dc-tpl="666" class="t-ideal">Ideal for: business owners ready to streamline, scale and build what’s next</p>
+        <p data-dc-tpl="793" class="t-ideal">Ideal for: business owners ready to streamline, scale and build what’s next</p>
       </div>
     </div>
-    <div data-dc-tpl="667" class="vals rise" style="margin-top: auto;">
-      <div data-dc-tpl="668"><h4 data-dc-tpl="669"><svg data-dc-tpl="670" class="ic" viewBox="0 0 24 24" aria-hidden="true"><line data-dc-tpl="671" x1="21" x2="14" y1="4" y2="4"></line><line data-dc-tpl="672" x1="10" x2="3" y1="4" y2="4"></line><line data-dc-tpl="673" x1="21" x2="12" y1="12" y2="12"></line><line data-dc-tpl="674" x1="8" x2="3" y1="12" y2="12"></line><line data-dc-tpl="675" x1="21" x2="16" y1="20" y2="20"></line><line data-dc-tpl="676" x1="12" x2="3" y1="20" y2="20"></line></svg>Flexible paths</h4><p data-dc-tpl="677">Start where you are. Move as you grow.</p></div>
-      <div data-dc-tpl="678"><h4 data-dc-tpl="679"><svg data-dc-tpl="680" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="681" d="M16 20V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v14"></path><rect data-dc-tpl="682" width="20" height="14" x="2" y="6" rx="2"></rect></svg>Real-world experience</h4><p data-dc-tpl="683">Practical solutions. Measurable results.</p></div>
-      <div data-dc-tpl="684"><h4 data-dc-tpl="685"><svg data-dc-tpl="686" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="687" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path data-dc-tpl="688" d="m9 12 2 2 4-4"></path></svg>A safer, stronger business</h4><p data-dc-tpl="689">Built on stability, efficiency and growth.</p></div>
-      <div data-dc-tpl="690"><h4 data-dc-tpl="691"><svg data-dc-tpl="692" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="693" d="M16 7h6v6"></path><path data-dc-tpl="694" d="m22 7-8.5 8.5-5-5L2 17"></path></svg>Long-term impact</h4><p data-dc-tpl="695">More time for what matters most.</p></div>
+    <div data-dc-tpl="794" class="vals rise" style="margin-top: auto;">
+      <div data-dc-tpl="795"><h4 data-dc-tpl="796"><svg data-dc-tpl="797" class="ic" viewBox="0 0 24 24" aria-hidden="true"><line data-dc-tpl="798" x1="21" x2="14" y1="4" y2="4"></line><line data-dc-tpl="799" x1="10" x2="3" y1="4" y2="4"></line><line data-dc-tpl="800" x1="21" x2="12" y1="12" y2="12"></line><line data-dc-tpl="801" x1="8" x2="3" y1="12" y2="12"></line><line data-dc-tpl="802" x1="21" x2="16" y1="20" y2="20"></line><line data-dc-tpl="803" x1="12" x2="3" y1="20" y2="20"></line></svg>Flexible paths</h4><p data-dc-tpl="804">Start where you are. Move as you grow.</p></div>
+      <div data-dc-tpl="805"><h4 data-dc-tpl="806"><svg data-dc-tpl="807" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="808" d="M16 20V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v14"></path><rect data-dc-tpl="809" width="20" height="14" x="2" y="6" rx="2"></rect></svg>Real-world experience</h4><p data-dc-tpl="810">Practical solutions. Measurable results.</p></div>
+      <div data-dc-tpl="811"><h4 data-dc-tpl="812"><svg data-dc-tpl="813" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="814" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path data-dc-tpl="815" d="m9 12 2 2 4-4"></path></svg>A safer, stronger business</h4><p data-dc-tpl="816">Built on stability, efficiency and growth.</p></div>
+      <div data-dc-tpl="817"><h4 data-dc-tpl="818"><svg data-dc-tpl="819" class="ic" viewBox="0 0 24 24" aria-hidden="true"><path data-dc-tpl="820" d="M16 7h6v6"></path><path data-dc-tpl="821" d="m22 7-8.5 8.5-5-5L2 17"></path></svg>Long-term impact</h4><p data-dc-tpl="822">More time for what matters most.</p></div>
     </div>
     
-    <div data-dc-tpl="697" class="foot" style="border-top: 0px; bottom: 32px;"><span data-dc-tpl="698">Stronger solutions, safer tomorrows.</span></div>
+    <div data-dc-tpl="824" class="foot" style="border-top: 0px; bottom: 32px;"><span data-dc-tpl="825">Stronger solutions, safer tomorrows.</span></div>
+    
+  </section></div>
+<div class="frame"><section data-dc-tpl="826" class="slide content" data-label="11 · Why Tier 3" data-screen-label="11 11 · Why Tier 3" data-om-validate="no_overflowing_text,no_overlapping_text,slide_sized_text" data-deck-slide="10" data-deck-last-visible="">
+        <div data-dc-tpl="827" class="ghost" aria-hidden="true">11</div>
+    <figure data-dc-tpl="828" class="plate" style="right: 0px; bottom: 0px; width: 820px; height: 360px; margin: 0px; background: transparent; mask-image: linear-gradient(105deg, transparent 4%, rgb(0, 0, 0) 42%); z-index: 0;">
+      <img data-dc-tpl="829" src="assets/skyline-strip.png" alt="Waikiki skyline at night" style="object-position: center bottom;">
+      <div data-dc-tpl="830" class="shade" style="background: linear-gradient(rgba(16, 16, 16, 0.85) 0%, rgba(16, 16, 16, 0.2) 60%);"></div>
+    </figure>
+    <div data-dc-tpl="831" class="head">
+      <div data-dc-tpl="832" class="kick"><span data-dc-tpl="833" class="kn">11</span><span data-dc-tpl="834" class="kb"></span><span data-dc-tpl="835" class="ks">Why we recommend Tier 3</span></div>
+      <div data-dc-tpl="836" class="bstack">
+        <div data-dc-tpl="837" style="font-family: Orbitron, sans-serif; font-weight: 800; font-size: 34px; line-height: 1;">$10,000<span data-dc-tpl="838" class="t-per"> / month</span></div>
+        <div data-dc-tpl="839" class="head-motto" style="letter-spacing: 0.16em;">Technology + Business partner</div>
+      </div>
+    </div>
+    <h2 data-dc-tpl="840" class="slide-title">Your transition crosses<br data-dc-tpl="841"><em data-dc-tpl="842">technology and business.</em></h2>
+    <p data-dc-tpl="843" class="lede rise" style="margin-top: 46px; max-width: 1240px; position: relative; z-index: 2;">The systems you build and the business decisions behind them need to stay aligned.</p>
+    <div data-dc-tpl="844" class="r3 rise" style="margin-top: 48px; max-width: 1560px;">
+      <div data-dc-tpl="845" class="r3-k">Independence</div><div data-dc-tpl="846" class="r3-v">Technology migration needs to align with business and entity decisions.</div>
+      <div data-dc-tpl="847" class="r3-k">Expansion</div><div data-dc-tpl="848" class="r3-v">New clients and locations bring staffing, process and infrastructure needs.</div>
+      <div data-dc-tpl="849" class="r3-k">Investment</div><div data-dc-tpl="850" class="r3-v">Technology priorities need financial visibility and a clear growth plan.</div>
+    </div>
+    <div data-dc-tpl="851" class="rise" style="margin-top: auto; display: grid; grid-template-columns: auto 1fr auto; align-items: start; column-gap: 44px; max-width: 1060px; position: relative; z-index: 2;">
+      <div data-dc-tpl="852"><div data-dc-tpl="853" style="font-family: Orbitron, sans-serif; font-weight: 800; font-size: 30px;">KEENAN</div><p data-dc-tpl="854" style="font-size: 20.5px; color: var(--mut); margin: 10px 0px 0px; line-height: 1.3;">Technology strategy,<br data-dc-tpl="855">architecture and execution</p></div>
+      <div data-dc-tpl="856" style="height: 3px; background: var(--org); margin-top: 15px;"></div>
+      <div data-dc-tpl="857"><div data-dc-tpl="858" style="font-family: Orbitron, sans-serif; font-weight: 800; font-size: 30px;">JOE <span data-dc-tpl="859" style="color: var(--org);">CXO</span></div><p data-dc-tpl="860" style="font-size: 20.5px; color: var(--mut); margin: 10px 0px 0px; line-height: 1.3;">Operations, financial perspective<br data-dc-tpl="861">and business planning</p></div>
+    </div>
+    
+    <div data-dc-tpl="863" class="foot"><span data-dc-tpl="864">Stronger solutions, safer tomorrows.</span></div>
     
   </section></div>
 <div class="deck-end">End &middot; EverGuard</div>
